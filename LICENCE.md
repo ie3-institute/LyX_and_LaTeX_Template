@@ -15,4 +15,4 @@ Link to the full legal code: [https://creativecommons.org/licenses/by-sa/4.0/leg
 ## Copyright Notice
 
 Copyright (c) [2026] [ie3](https://github.com/ie3-institute)
-Copyright (c) [2025] [drthorsia](https://github.com/drthorsia)
+Copyright (c) [2025] [Thorbjörn Siaenen](https://github.com/drthorsia)
