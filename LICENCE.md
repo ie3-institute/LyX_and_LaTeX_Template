@@ -1,6 +1,6 @@
 # License
 
-This work is an adaptation of the original work by [Thorbjörn Siaenen](https://github.com/drthorsia), published at: [LyX_and_LateX_Template](https://github.com/drthorsia/LyX_and_LaTeX_Template).
+This work is an adaptation of the original work by [Prof. Dr. Thorbjörn Siaenen](https://github.com/drthorsia), published at: [LyX_and_LateX_Template](https://github.com/drthorsia/LyX_and_LaTeX_Template).
 
 The original work and these modifications are licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
 
