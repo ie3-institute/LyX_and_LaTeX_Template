@@ -7,4 +7,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Added License, Authors file, etc. [1](https://github.com/ie3-institute/LyX_and_LaTeX_Template/issues/1)
+- Added License, Authors file, etc. [#1](https://github.com/ie3-institute/LyX_and_LaTeX_Template/issues/1)
