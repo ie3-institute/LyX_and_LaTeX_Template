@@ -7,7 +7,7 @@ All authors ordered alphabetically.
 - Petersmeier, Pierre
 
 ## Acknowledgements & Origin (Special Thanks)
-This project is a derivative work based on the original LaTeX template created by **[drthorsia](https://github.com/drthorsia)**.
+This project is a derivative work based on the original LaTeX template created by **[Thorbjörn Siaenen](https://github.com/drthorsia)**.
 
 Special thanks to the original author(s) for releasing their work under the **CC BY-SA 4.0** license, which made this adaptation possible. The foundation laid by the original repository was essential for this project.
 
