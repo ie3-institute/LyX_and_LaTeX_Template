@@ -3,7 +3,7 @@ The following files lists all authors that have been involved in the development
 involvement in related research projects, as research assistants or by making voluntarily contributions.
 All authors ordered alphabetically.
 
-- Feismann, Daniel (Redispatch 3.0)
+- Feismann, Daniel
 - Petersmeier, Pierre
 
 ## Acknowledgements & Origin (Special Thanks)
