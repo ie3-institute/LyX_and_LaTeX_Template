@@ -1,11 +1,13 @@
 # LyX_and_LaTeX_Template
 
-This is a template for scientific reports and thesises.
+This is a template for scientific reports and theses using the LaTeX typesetting system. The template is available in the LyX format. LyX is a free WYSIWYM (What You See Is What You Mean) editor that generates LaTeX code, which is then converted to a PDF file.
 
-The main files are used in the editor LyX. 
-There are two subfolders with LaTeX files, which are tested with the 
-sharelatex-server.
+The main files are used in the editor LyX. There are two subfolders with LaTeX files, which are tested with ShareLaTeX.
 
-# Download
+## Typography
 
-You can download the files by clicking on the green button "<> Code" and then "Download ZIP".
+This template uses STIX fonts (https://www.stixfonts.org/) for the main body text. The cover page uses Nimbus Sans L for visual distinction. These font choices ensure professional scientific typesetting and readability.
+
+# Documentation
+
+For detailed instructions on how to use this template, please refer to [USERGUIDE.md](USERGUIDE.md).
