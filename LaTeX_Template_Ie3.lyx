@@ -1,0 +1,3912 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrreprt
+\begin_preamble
+%\usepackage{xurl}
+
+\usepackage{tikz}
+\usepackage{tikzpagenodes} 
+%\usepackage{palatino} % Fuer Schriftart Palatino (Optional)
+%\usepackage{mathpazo} % Fuer Schriftart Palatino (Optional)
+\usepackage[notextcomp]{stix} % Fuer Schriftart Stix
+\usepackage{upgreek}
+\usepackage{datetime}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{acronym} % Fuer Abkuerzungen
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage{longtable}
+\usepackage{subfig}
+\usepackage[listings]{tcolorbox}
+\usepackage{ifthen} % fuer if-vergleich
+
+
+% TS 2024-01-08: Die nachfolgenden Befehle sind augenscheinlich mit
+% LyX 2.4.2.1 und MikTeX 24.4 obsolet:
+% Listings wird durch lyx spaeter automatisch nochmal zugefuegt.
+% Der automatisch zugefuegte Befehl \renewcommand{\lstlistlistingname}{\inputencoding{latin9}Programmlistings}
+% fuehrt aber dazu dass \ihead{\headmark} nicht mit der Benutzung von \lstlistoflistings zu vereinbaren ist.
+% Abhilfe: hier scrhack und dann listings laden.
+%\usepackage{scrhack}
+%\usepackage{listings}
+
+
+\usepackage[headsepline, automark]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+%\clearpairofpagestyles
+%\automark[section]{chapter}
+\ihead{\headmark}
+\chead{}
+%\ohead{\headmark}
+
+\cfoot{\pagemark}
+
+\usepackage{color}
+\usepackage{blindtext}
+\urlstyle{rm}
+\usepackage{capt-of}
+
+% Korrektur der Abstaende zwischen Funktion und Klammern:
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}%
+\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup%
+\egroup\originalright}
+
+% Farben fuer Code-Listings
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Paket setspace fuer den Zeilenabstand in der Titelei
+\usepackage{setspace}
+
+%\usepackage{url}
+%\hypersetup{breaklinks=true}
+%\def\UrlBigBreaks{\do\w\do\t\do\u\do\g\do\p\do\r\do\a\do\c\do\j\do\o}
+
+\usepackage{booktabs}
+\mathcode `,="013B
+\mathcode `.="613A
+%\makeatletter
+%% Der nachfolgende Befehl erfordert das Paket amsmath
+%\newcommand{\eqnum}{\refstepcounter{equation}\textup{\tagform@{\theequation}}}
+%\makeatother
+%\renewcommand{\theequation}{\ifnum\thechapter=666 FS\else \thechapter\fi .\arabic{equation}}
+%\makeatletter
+%\DeclareMathSizes{\@xpt}{\@xpt}{\@xpt}{\@xpt}
+%\makeatother
+%\DeclareMathSizes{10.95}{11}{13}{13}
+
+\tcbuselibrary{skins}
+
+\newcommand{\vornamenachnamematnr}{Verfasser/-in}
+\renewcommand{\vornamenachnamematnr}{Vorname Nachname, 7038602}
+
+% Titel, Variante A:
+\newcommand{\titelzeileeins}{Titel der Arbeit}
+\renewcommand{\titelzeileeins}{}
+\newcommand{\titelzeilezwei}{optional zweite Zeile}
+\renewcommand{\titelzeilezwei}{}
+
+% Titel, Variante B
+\newcommand{\titelmitgroessenangabe}{\Huge Titel der Arbeit}
+\renewcommand{\titelmitgroessenangabe}{\Large Titel der Arbeit. Der Titel kann auch länger sein. Der Text des Titels wird automatisch umgebrochen.}
+%\renewcommand{\titelmitgroessenangabe}{}
+
+\newcommand{\untertitelmitgroessenangabe}{\Huge Untertitel der Arbeit}
+\renewcommand{\untertitelmitgroessenangabe}{\Large Untertitel der Arbeit. Der Titel kann auch länger sein. Der Text des Titels wird automatisch umgebrochen.}
+\newcommand{\tstitleheadgroessenangabe}{\Huge titlehead}
+\renewcommand{\tstitleheadgroessenangabe}{\Large titlehead laenger.}
+
+\newcommand{\abschluss}{Bachelor/Master of ... (Bezeichnung)}
+\renewcommand{\abschluss}{Bachelor of Engineering (B.Eng.)}
+\newcommand{\studiengang}{....\,}
+\renewcommand{\studiengang}{Elektro- und Informationstechnik}
+\newcommand{\studienrichtung}{....\,}
+\renewcommand{\studienrichtung}{Elektromobilität und Energiesysteme}
+\newcommand{\erstpruefer}{Erste/-r Prüfer/-in:}
+\renewcommand{\erstpruefer}{Erster Prüfer: Prof. Dr.-Ing. T. Siaenen}
+\newcommand{\zweitpruefer}{Zweite/-r Prüfer/-in:}
+\renewcommand{\zweitpruefer}{Zweite Prüferin: Dr. C. Müller}
+\newcommand{\einreichungsdatum}{YYYY-MM-DD}
+\renewcommand{\einreichungsdatum}{2020-10-15}
+\newcommand{\firmenhinweis}{Diese Arbeit wurde im Rahmen eines Praxisprojektes bei ... (Firmenname) erstellt}
+\renewcommand{\firmenhinweis}{Diese Arbeit wurde im Rahmen eines Praxisprojektes bei XYZ GmbH erstellt.}
+
+
+
+\makeatletter         
+\renewcommand\maketitle{
+{%
+\ifthenelse{\equal{\@title}{}}{}{\renewcommand{\titelmitgroessenangabe}{\Large\@title}}
+\ifthenelse{\equal{\@subtitle}{}}{}{\renewcommand{\untertitelmitgroessenangabe}{\@subtitle}}
+\ifthenelse{\equal{\@author}{}}{}{\renewcommand{\vornamenachnamematnr}{\@author}}
+\ifthenelse{\equal{\@date}{}}{}{\renewcommand{\einreichungsdatum}{\@date}}
+\ifthenelse{\equal{\@titlehead}{}}{}{\renewcommand{\tstitleheadgroessenangabe}{\@titlehead}}
+
+\thispagestyle{empty}%
+\definecolor{otftitel}{RGB}{0,54,119}
+\definecolor{otfhellblau}{RGB}{0,159,226}
+\begin{tikzpicture}[remember picture,overlay]
+      %\node (back names) [shape=rectangle, fill=blue!15!white, minimum height=40mm, minimum width=\paperwidth, anchor=north west] at (current page.north west) {
+      \node at ([shift={(159.5mm,-22.95mm)}]current page.north west) {\includegraphics[width=76.76mm]{figures/Vorlagenbilder/UniversityLogo.pdf}};
+	  \draw[color=black, line width=0.35mm] (-9.0mm,-23.45mm) -- ++(177.9mm,0mm);
+% Template:	  \node[color=otfhellblau,anchor=base west] at ([shift={(45.6mm,-41.3mm)}]current page.north west) {\textsf{Name der Fakultät}};
+	 
+	  \node[color=black,anchor=base west, scale=1.005] at ([shift={(18.7mm,-68.9mm)}]current page.north west) {\textbf{\fontfamily{phv}\fontseries{b}\selectfont \vornamenachnamematnr}};
+
+% Original-Template, Titel Variante A
+\node[color=otftitel,anchor=base west, scale=1.126] at ([shift={(15.0mm,-83.15mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \Huge \titelzeileeins}};  
+\node[color=otftitel,anchor=base west, scale=1.126] at ([shift={(19.3mm,-96.2mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \Huge \titelzeilezwei}};
+
+% Titel, Variante B:
+\node[color=black,anchor=north west, scale=1.6, text width=100mm, text badly ragged] at ([shift={(18.4mm,-71.4mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \titelmitgroessenangabe}}; 
+\node[color=black,anchor=north west, scale=1.03, text width=160mm, text badly ragged, font=\linespread{1.5}\fontfamily{phv}\fontseries{sf}\selectfont] at ([shift={(18.4mm,-101.0mm)}]current page.north west) {\Large\untertitelmitgroessenangabe}; 
+\draw[color=black, line width=0.35mm] (-9.0mm,-79.45mm) -- ++(177.9mm,0mm);
+\node[color=black,anchor=north west, scale=1.03, text width=160mm, text badly ragged, font=\linespread{1.5}\fontfamily{phv}\fontseries{sf}\selectfont] at ([shift={(18.4mm,-122.4mm)}]current page.north west) {\einreichungsdatum}; 
+\node[color=black,anchor=north west, scale=1.03, text width=160mm, text badly ragged, font=\linespread{1.5}\fontfamily{phv}\fontseries{sf}\selectfont] at ([shift={(18.4mm,-172.4mm)}]current page.north west) {\tstitleheadgroessenangabe}; 
+%\node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-110.5mm)}]current page.north west) {\fontfamily{phv}\fontseries{sf}\selectfont Abschlussarbeit zur Erlangung des Hochschulgrades};
+% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-116.2mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \abschluss}};
+% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-128.0mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont im Studiengang \studiengang\ }};
+% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-133.8mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont in der Studienrichtung \studienrichtung\ }};
+% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-139.6mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont an der Ostfalia Hochschule für angewandte Wissenschaften}};
+% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-145.4mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont -- Hochschule Braunschweig/Wolfenbüttel}};
+% \draw[color=otfhellblau, line width=0.35mm] (-1mm,-124.25mm) -- ++(153.35mm,0mm);
+% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-157.2mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \erstpruefer}};
+% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-163.0mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \zweitpruefer}};
+% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-174.6mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont Eingereicht am: \einreichungsdatum}};	  
+% \node[color=black,anchor=north west, scale=1.003] at ([shift={(23.6mm,-181.8mm)}]current page.north west) {\textsf{\parbox{\textwidth}{\fontfamily{phv}\fontseries{sf}\selectfont \firmenhinweis}}};	 
+%\node[color=otftitel,anchor=base west, scale=0.81] at ([shift={(109.5mm,-281.6mm)}]current page.north west) {\fontfamily{phv}\fontseries{sf}\selectfont \textsf{Salzgitter $\cdot$ Suderburg $\cdot$} \textbf{\textsf{Wolfenbüttel}} \textsf{$\cdot$ Wolfsburg}};
+\end{tikzpicture}
+}} % Note the extra }
+\makeatother
+\title{} % Damit der Titel definiert ist/ andernfalls gibt es eine Fehlermeldung
+\author{}
+\date{}
+
+% Pi immer aufrecht darstellen
+\renewcommand{\pi}{\uppi}
+
+
+% Roemische Seitenzahlen bis zur ersten Kapitel
+\pagenumbering{roman}
+
+\urlstyle{tt}
+%\renewcommand{\UrlBreaks}{\do\/\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}
+
+
+%\usepackage[style=authoryear-icomp, % Zitations- bzw. Literaturstil
+%isbn=false, % ISBN nicht anzeigen
+%backrefstyle=three+, % fasst Seiten zusammen, z.B. S. 2f, 6ff, 7-10
+%ibidpage=true, % Bei gleichen Seitenzahlen die Seitenzahl bei ebd. weglassen
+%pagetracker=true,
+%giveninits=true, % Vornamen der Autoren im Literaturverzeichnis abkürzen
+%uniquename=init,
+%dashed=false, % Im Literaturverzeichnis bei zwei Werken gleichen Autors den Autor trotzdem überall aufführen
+%]{biblatex}
+%\DefineBibliographyStrings{german}{%
+%  and     = {u\adddot},
+%  urlseen = {abgerufen am},
+%  urlfrom = {online unter},
+%}
+%\DeclareDelimFormat[bib,biblist]{nametitledelim}{\addcolon\addspace}
+%\AtBeginBibliography{%
+%  \renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}}
+
+%\DeclareFieldFormat{url}{\bibstring{urlfrom}\addcolon\space\url{#1}}
+%\DeclareFieldFormat{url}{\mkbibbrackets{online}\addspace\url{#1}}
+%\DeclareFieldFormat{urldate}{\mkbibbrackets{#1}}
+
+
+
+% Ein potenzieller Fehler ist, dass LyX am Ende der Praeambel das Listings-Paket laed und
+% den Befehl \renewcommand{\lstlistlistingname}{\inputencoding{latin9}Programmlistings}
+% zufuegt. Das kann ggf. vorher mit \let\rsqlstlistlistingname\lstlistlistingname und am Anfang des 
+% Dokumentes mit einem \let\lstlistlistingname\rsqlstlistlistingname behoben werden.
+% Eventuell handelt es sich um eine Inkompartibilitaet von \lstlistoflistings und \ihead{\headmark}
+%\let\lstlistlistingname\rsqlstlistlistingname
+\end_preamble
+\options DIV=15, listtotoc, pointlessnumbers
+\use_default_options true
+\maintain_unincluded_children no
+\language ngerman
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command bibtex8
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "hypertexnames=false"
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine biblatex
+\cite_engine_type numerical
+\biblio_style plain
+\biblatex_bibstyle numeric-comp
+\biblatex_citestyle numeric-comp
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 25mm
+\rightmargin 25mm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style german
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\listings_params "backgroundcolor={\color{backcolour}},commentstyle={\color{codegreen}},keywordstyle={\color{magenta}},numberstyle={\tiny\color{codegray}\noncopynumber},stringstyle={\color{codepurple}},numbers=left,numberstyle={\tiny},breakatwhitespace=false,breaklines=true,captionpos=b,keepspaces=true,numbersep=5pt,basicstyle={\footnotesize\ttfamily},frame=single,linewidth=167mm,inputencoding=utf8,showspaces=false,showstringspaces=false,showtabs=false,tabsize=2,language={[LaTeX]TeX}"
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Formatvorlage für Berichte und Tipps zu 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+Abschlussarbeit zur Erlangung des Hochschulgrades
+\series medium
+ Bachelor of Engineering (B.Eng.)
+\end_layout
+
+\begin_layout Date
+Herausgeber und/oder Datum 2021-03-16
+\end_layout
+
+\begin_layout Author
+Thorbjörn Siaenen (7038602)
+\end_layout
+
+\begin_layout Titlehead
+\begin_inset Graphics
+	filename figures/Vorlagenbilder/cc-by.png
+	width 20mm
+
+\end_inset
+
+ Dieses Werk ist lizenziert unter einer Creative Commons Namensnennung 4.0 International Lizenz.
+ https://creativecommons.org/licenses/by/4.0/
+\begin_inset Newline newline
+\end_inset
+
+Zuletzt getestet mit LyX 2.4.2.1 und MikTeX 24.4 am 2025-01-08
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Betriebsinterne Notiz:
+ Alle Änderungen an der Vorlage müssen händisch auch auf die BibTex-Variante der Vorlage übertragen werden.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Wichtig für die Normkonforme Darstellung von Internetquellen bei der Verwendung von BibLaTeX:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+DeclareFieldFormat[online]{title}{
+\backslash
+textit{#1} [online]}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+DeclareFieldFormat[online]{version}{#1}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+DeclareFieldFormat[online]{url}{Verf
+\backslash
+
+\begin_inset Quotes grd
+\end_inset
+
+ugbar unter:
+ 
+\backslash
+url{#1}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+DeclareFieldFormat[online]{date}{
+\backslash
+mkbibbrackets{Zugrifff am #1}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Autor(en)
+\end_layout
+
+\begin_layout Standard
+Maria Mustermann
+\begin_inset Newline newline
+\end_inset
+
+Matrikelnummer 7068602
+\begin_inset Newline newline
+\end_inset
+
+Studiengang:
+ Elektrotechnik im Praxisverbund
+\begin_inset Newline newline
+\end_inset
+
+Studienrichtung:
+ Elektromobilität
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset VSpace 4mm
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Max Musterfrau
+\begin_inset Newline newline
+\end_inset
+
+Matrikelnummer 7068603
+\begin_inset Newline newline
+\end_inset
+
+Studiengang:
+ Elektrotechnik im Praxisverbund
+\begin_inset Newline newline
+\end_inset
+
+Studienrichtung:
+ Elektromobilität
+\end_layout
+
+\begin_layout Subsection*
+Erstprüferin
+\end_layout
+
+\begin_layout Standard
+Prof.
+ Dr.-Ing.
+ Marlene Muster
+\begin_inset Newline newline
+\end_inset
+
+( ggf.
+ Institut für ...)
+\begin_inset Newline newline
+\end_inset
+
+Ostfalia Hochschule für Angewandte Wissenschaften – Hochschule Braunschweig/Wolfenbüttel
+\begin_inset Newline newline
+\end_inset
+
+Salzdahlumer Straße 46/48
+\begin_inset Newline newline
+\end_inset
+
+38302 Wolfenbüttel
+\end_layout
+
+\begin_layout Subsection*
+Zweitprüfer
+\end_layout
+
+\begin_layout Standard
+Michael Exampel,
+ M.
+ Eng.
+\begin_inset Newline newline
+\end_inset
+
+XYZ GmbH & Co.
+ KG.
+\begin_inset Newline newline
+\end_inset
+
+Bahnhofstraße 42
+\begin_inset Newline newline
+\end_inset
+
+32512 Musterdorf
+\end_layout
+
+\begin_layout Subsection*
+Bearbeitungszeitraum
+\end_layout
+
+\begin_layout Standard
+Beginn:
+ 2019-02-29,
+ Ende:
+ 2019-09-19
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Erklärung
+\end_layout
+
+\begin_layout Standard
+– Hier den Text aus der Prüfungsordnung einfügen,
+ in dem erklärt wird,
+ dass die Arbeit selbständig erstellt wurde –
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 15mm
+\end_inset
+
+Ort/Datum eigenhändige Unterschrift
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Abstract
+\end_layout
+
+\begin_layout Standard
+Dies ist das Abstract.
+ Hier steht,
+ worum es geht,
+ welche Methoden angewendet wurden und was die Ergebnisse sind.
+\end_layout
+
+\begin_layout Standard
+In dieser Vorlage sind viele Verzeichnisse vorhanden.
+ Besprechen Sie mit allen Beteiligten (Betreuer(in),
+ Prüfer(in),
+ Zweitprüfer(in)),
+ welche Verzeichnisse in die Arbeit mit aufgenommen werden sollen.
+\end_layout
+
+\begin_layout Subsection*
+Anmerkungen zu Kooperationen (Nur wenn unbedingt erforderlich)
+\end_layout
+
+\begin_layout Standard
+Wenn notwendig,
+ kann hier auf eventuelle Kooperationen mit Partnern hingewiesen werden.
+ Weiterhin ist hier Platz für Danksagungen und Widmungen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Abkürzungsverzeichnis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{multicols}{2}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+raggedcolumns
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{acronym}[aaaaaaaa]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+itemsep}{-
+\backslash
+parsep}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{adc}[
+\backslash
+normalfont{
+\end_layout
+
+\end_inset
+
+ADC
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}]{
+\end_layout
+
+\end_inset
+
+Analog Digital Converter
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{dac}[
+\backslash
+normalfont{
+\end_layout
+
+\end_inset
+
+DAC
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}]{
+\end_layout
+
+\end_inset
+
+Digital Analog Converter
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{dms}[
+\backslash
+normalfont{
+\end_layout
+
+\end_inset
+
+DMS
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}]{
+\end_layout
+
+\end_inset
+
+Dehnungsmessstreifen
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{hil}[
+\backslash
+normalfont{
+\end_layout
+
+\end_inset
+
+HiL
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}]{
+\end_layout
+
+\end_inset
+
+Hardware in the Loop
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{io}[
+\backslash
+normalfont{
+\end_layout
+
+\end_inset
+
+I/O
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}]{
+\end_layout
+
+\end_inset
+
+Input/Output
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{lookuptable}[
+\backslash
+normalfont{
+\end_layout
+
+\end_inset
+
+LUT
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}]{
+\end_layout
+
+\end_inset
+
+Look Up Table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{overexcitationlimiter}[
+\backslash
+normalfont{
+\end_layout
+
+\end_inset
+
+OEL
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}]{
+\end_layout
+
+\end_inset
+
+Overexcitation Limiter
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{powersystemstabilizer}[
+\backslash
+normalfont{
+\end_layout
+
+\end_inset
+
+PSS
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}]{
+\end_layout
+
+\end_inset
+
+Power System Stabilizer
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{rapidcontrolprototyping}[
+\backslash
+normalfont{
+\end_layout
+
+\end_inset
+
+RCP
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}]{
+\end_layout
+
+\end_inset
+
+Rapid Control Prototyping
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{statorcurrentlimiter}[
+\backslash
+normalfont{
+\end_layout
+
+\end_inset
+
+SCL
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}]{
+\end_layout
+
+\end_inset
+
+Stator Current Limiter
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{underexcitationlimiter}[
+\backslash
+normalfont{
+\end_layout
+
+\end_inset
+
+UEL
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}]{
+\end_layout
+
+\end_inset
+
+Underexcitation Limiter
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{vcl}[
+\backslash
+normalfont{
+\end_layout
+
+\end_inset
+
+VCL
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}]{
+\end_layout
+
+\end_inset
+
+VAR Controller Logic
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{acronym}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{multicols} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Symbolverzeichnis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{multicols}{2}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+raggedcolumns 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{acronym}[aaaaaaaa]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+itemsep}{-
+\backslash
+parsep}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{Di}[
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $D_{\mathrm{i}}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]{
+\end_layout
+
+\end_inset
+
+Dämpfung des geschlossenen Stromregelkreises
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{e}[
+\end_layout
+
+\end_inset
+
+e
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]{
+\end_layout
+
+\end_inset
+
+Induzierte Ankerspannung der Gleichstrommaschine
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+acroextra{in $s^{-1}$}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{Ebase}[
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $E_{\mathrm{base}}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]{
+\end_layout
+
+\end_inset
+
+Bezugseffektivwert einer Spannung
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{efd}[
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $e_{\mathrm{fd}}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]{
+\end_layout
+
+\end_inset
+
+Normierte Statorspannung der d-Achse
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{EFD}[
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $E_{\mathrm{FD}}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]{
+\end_layout
+
+\end_inset
+
+Normierte Feldspannung (Erregersystem)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{Di}[
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $e_{\mathrm{fd,base}}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]{
+\end_layout
+
+\end_inset
+
+Bezugsfeldspannung der d-Achse
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+acro{Di}[
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $E_{\mathrm{FD,max}}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]{
+\end_layout
+
+\end_inset
+
+Maximum der normierten Feldspannung (Erregersystem)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{acronym}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{multicols} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset toc
+LatexCommand lstlistoflistings
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstlistoflistings
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Einleitung
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic} 
+\end_layout
+
+\end_inset
+
+Über diese Vorlage:
+ Es handelt sich um eine Vorlage für wissenschaftliche Arbeiten mit dem Satzssystem LaTeX.
+ Diese Vorgabe liegt in zwei Formaten vor:
+ LyX und LaTeX.
+ LyX ist ein freier WYSIWYM (What you see is what you mean)-Editor,
+ der LaTeX-Code erzeugt,
+ der dann in eine PDF-Datei gewandelt wird.
+ 
+\end_layout
+
+\begin_layout Standard
+Insbesondere bei Gruppenarbeiten bietet es sich alternativ an,
+ als Editor Overleaf zu nutzen.
+ Es handelt sich um einen kollaborativen Editor,
+ bei dem in Echtzeit mehrere Personen gleichzeitig ein Textdokument (LaTeX-Code) bearbeiten können.
+ Als Studierende der Ostfalia Hochschule können Sie unter 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+www.academiccloud.de
+\end_layout
+
+\end_inset
+
+ eine Installation von Overleaf nutzen,
+ deren Server in Deutschland betrieben werden .
+\end_layout
+
+\begin_layout Standard
+Als Schriftart für dieses Dokument wurde STIX (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.stixfonts.org/
+\end_layout
+
+\end_inset
+
+) gewählt,
+ weil davon auszugehen ist,
+ dass sie sich (Stand Anfang 2021) in Zukunft in der Wissenschaftsliteratur stark verbreitet wird.
+ Die Schriftart auf dem Deckblatt ist Nimbus Sans L,
+ weil es eine große Ähnlichkeit zur Ostfalia-Vorlage für Abschlussarbeiten hat.
+ An dieser Vorlage wird kontinuierlich verbessert.
+ Bei Fragen oder Feedback dazu freut sich Prof.
+ Dr.
+ T.
+ Siaenen unter t.siaenen@ostfalia.de über eine E-Mail.
+\end_layout
+
+\begin_layout Standard
+Es wird hier auch beschrieben,
+ wie eine Qualitätssicherung der Ergebnisse erfolgt.
+ Bei experimentellen Arbeiten könnte das ein Vergleich zwischen den experimentellen Ergebnissen und einer Simulation sein.
+ Bei konstruktiv-planerischen Aufgaben kann eine Qualitätssicherung durch eine Überführung der Aufgabenstellung ein ein standardisiertes Problemlösungsmuster erfolgen.
+ Beispiel:
+ Die Aufgabe besteht darin,
+ aus vielen Produkten das 
+\begin_inset Quotes gld
+\end_inset
+
+beste
+\begin_inset Quotes grd
+\end_inset
+
+ auszuwählen.
+ Dann wird die Qualität der Arbeit dadurch sichergestellt,
+ dass eine Nutzwertanalyse durchgeführt wird.
+\end_layout
+
+\begin_layout Chapter
+Gliederung:
+ Kapitel
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:markeeineskapitels"
+
+\end_inset
+
+Wichtig bei der Gliederung eines Dokumentes:
+ Eine Untergliederung hat immer mindestens zwei Einträge.
+ Beispiel:
+ Wenn ein Kapitel in Abschnitte unterteilt wird,
+ dann gibt es mindestens zwei Abschnitte in dem Kapitel.
+\end_layout
+
+\begin_layout Section
+Gliederung:
+ Abschnitt
+\end_layout
+
+\begin_layout Standard
+Nach jedem Gliederungs-Element (Kapitel,
+ Abschnitt,
+ Unterabschnitt) steht zunächst ein beschreibender Text.
+ Erst dann wird das Dokument in Unterabschnitte unterteilt.
+\end_layout
+
+\begin_layout Subsection
+Gliederung:
+ Unter-Abschnitt
+\end_layout
+
+\begin_layout Standard
+Hier wird auf den Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:markeeineskapitels"
+nolink "false"
+
+\end_inset
+
+ verwiesen.
+\end_layout
+
+\begin_layout Chapter
+Formeln
+\end_layout
+
+\begin_layout Section
+Fließtext und Formeln
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "eq:formelnnummeriert"
+
+\end_inset
+
+Formeln können in zwei Varianten geschrieben stehen:
+ Einmal im Text:
+ 
+\begin_inset Formula $\mathrm{sin}(x)=\pi/3$
+\end_inset
+
+ wie in diesem Beispiel,
+ oder als abgesetzte Formel:
+ 
+\begin_inset Formula 
+\[
+\mathrm{sin}(x)=\pi/3
+\]
+
+\end_inset
+
+Weiterhin kann man eine Formel auch automatisch nummerieren lassen:
+ 
+\begin_inset Formula 
+\begin{equation}
+\mathrm{sin}(x)=\pi/3\label{eq:abgesetzteformel}
+\end{equation}
+
+\end_inset
+
+In dem Text kann dann auf die Gleichung 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:abgesetzteformel"
+nolink "false"
+
+\end_inset
+
+ (Achtung:
+ Das Paket hyperref erzeugt Hyperlinks die auf der Seite an falscher Position liegen) referenziert werden.
+ Zwei Abgesetzte Formeln nebeneinander können mit folgender Struktur dargestellt werden:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "39text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{equation}
+\mathrm{e}^{\mathrm{j\,\pi}}+1=0\label{eq:allekonstentenineinergleichung}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "59text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{equation}
+\mathrm{sin}(x)^{2}+\mathrm{cos}(x)^{2}=1\label{eq:trigonometrischerpythagora}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Alternative Darstellungsweise mit Kästchen:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "38text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{equation}
+\mathrm{e}^{\mathrm{j\,\pi}}+1=0\label{eq:allekonstentenineinergleichung-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "57text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{equation}
+\mathrm{sin}(x)^{2}+\mathrm{cos}(x)^{2}=1\label{eq:trigonometrischerpythagora-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wenn statt der Gleichungsnummer zwei Fragezeichen erscheinen muss häufig die Datei noch einmal übersetzt,
+ oder label und ref haben unterschiedliche Marken.
+ Beim Konvertieren zwischen der .TEX-Datei und der PDF-Datei spricht man vom sog.
+ 
+\shape italic
+Setzen
+\shape default
+.
+\end_layout
+
+\begin_layout Section
+Regeln zum Formelsatz
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "eq:formelsatz"
+
+\end_inset
+
+Für das Setzen von Formeln gibt es Regeln:
+\end_layout
+
+\begin_layout Itemize
+Variablen werden kursiv gesetzt:
+ 
+\begin_inset Formula $u$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Indizes,
+ Konstanten,
+ physikalische Einheiten und Funktionsnamen werden aufrecht gesetzt:
+ 
+\begin_inset Formula $\mathrm{kA}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Zwischen Zahlenwert und Einheit wird ein kleiner Leerraum gesetzt:
+ 
+\begin_inset Formula $U=5\,\mathrm{V}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Konstante indizes werden aufrecht gesetzt:
+ 
+\begin_inset Formula $u_{\mathrm{min}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Variable Indizes werden kursiv gesetzt:
+ 
+\begin_inset Formula $\overline{u}=\frac{1}{42}\sum_{k=1}^{42}u_{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Zur Multiplikation wird der Multiplikationspunkt gesetzt:
+ 
+\begin_inset Formula $x\cdot y=z$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Für das Kreuzprodukt wird das liegende Kreuz verwendet:
+ 
+\begin_inset Formula $\boldsymbol{x}\times\boldsymbol{y}=\boldsymbol{z}$
+\end_inset
+
+.
+ Weiterhin darf es für Flächenangaben verwendet werden:
+ 
+\begin_inset Formula $A=25\,\mathrm{m}\times14\,\mathrm{m}$
+\end_inset
+
+.
+ Das liegende Kreuz 
+\begin_inset Formula $\times$
+\end_inset
+
+ ist nicht dasselbe Zeichen wie der vor-vorletzte Buchstabe des Alphabets:
+ x.
+\end_layout
+
+\begin_layout Itemize
+Für die Faltung wird das Sternchen verwendet:
+ 
+\begin_inset Formula $a*b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bei Zwischenzeilen-Formeln kann statt 
+\begin_inset Formula $\mathrm{e}^{\mathrm{j}\,\varphi}$
+\end_inset
+
+ geschrieben werden:
+ 
+\begin_inset Formula $\mathrm{exp}\left(\mathrm{j}\,\varphi\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bei Zwischenzeilenformeln kann statt dem Bruch (
+\begin_inset Formula $\frac{7}{8}$
+\end_inset
+
+) der Schrägstrich verwendet werden:
+ 
+\begin_inset Formula $7/8$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Also:
+ 
+\begin_inset Formula $x_{\mathrm{start}}$
+\end_inset
+
+ statt 
+\begin_inset Formula $x_{start}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\mathrm{sin}(x)$
+\end_inset
+
+ statt 
+\begin_inset Formula $sin(x)$
+\end_inset
+
+,
+ 
+\begin_inset Formula $z=4+\mathrm{j}\,6$
+\end_inset
+
+ statt 
+\begin_inset Formula $z=4+j\,6$
+\end_inset
+
+,
+ 
+\begin_inset Formula $i=4{,}5\,\mathrm{A}$
+\end_inset
+
+ statt 
+\begin_inset Formula $i=4{,}5\,A$
+\end_inset
+
+ und 
+\begin_inset Formula $\mathrm{e}^{\mathrm{j}\,\pi}$
+\end_inset
+
+ statt 
+\begin_inset Formula $e^{j\,\pi}$
+\end_inset
+
+.
+ Bei Zahlenwerten in Formeln sollte das Komma als Dezimaltrennzeichen in geschweifte Klammern gesetzt werden.
+ Damit wird ein falscher Leerraum verhindert.
+ Richtig:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinline[language=TeX]|$
+\backslash
+pi=3{,}14$|
+\end_layout
+
+\end_inset
+
+ ergibt:
+ 
+\begin_inset Formula $\pi=3{,}14$
+\end_inset
+
+.
+ Falsch:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinline[language=TeX]|$
+\backslash
+pi=3,14$|
+\end_layout
+
+\end_inset
+
+ ergibt:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+raisebox{-1mm}{
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename figures/03kommaabstand/kommaabstand.png
+	width 19mm
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Formeln kommen beispielhaft folgende Elemente vor:
+\end_layout
+
+\begin_layout Itemize
+Wurzel:
+ 
+\begin_inset Formula $\sqrt{\left(x\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+n-te Wurzel:
+ 
+\begin_inset Formula $\sqrt[3]{x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bruch:
+ 
+\begin_inset Formula $\frac{\text{Zähler}}{\text{Nenner}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Index:
+ 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Index mit mehreren Buchstaben:
+ 
+\begin_inset Formula $x_{\mathrm{start}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Sub-(sub-)Indizes:
+ 
+\begin_inset Formula $S_{v_{\mathrm{end}_{2}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Exponent:
+ 
+\begin_inset Formula $x^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Exponent mit mehreren Buchstaben:
+ 
+\begin_inset Formula $x^{12}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Integral:
+ 
+\begin_inset Formula $\int x^{2}\,\mathrm{d}x$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Bestimmtes Integral:
+ 
+\begin_inset Formula $\int_{0}^{\infty}f(x)\,\mathrm{d}x$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Buchstaben aufrecht gesetzt (nicht kursiv):
+ 
+\begin_inset Formula $\mathrm{x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Summenzeichen:
+ 
+\begin_inset Formula $\sum$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Summenzeichen mit Grenzen:
+ 
+\begin_inset Formula $\sum_{k=1}^{42}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Griechische Buchstaben:
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\beta$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\gamma$
+\end_inset
+
+,
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Multiplikationspunkt (nicht:
+ $a*b$):
+ 
+\begin_inset Formula $a\cdot b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Geschweifte Klammern unten:
+ 
+\begin_inset Formula $\underbrace{a\cdot b}_{c}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Geschweifte Klammern oben:
+ 
+\begin_inset Formula $\overbrace{0\cdot b}^{=0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Abstand:
+ klein (Multiplikation) 
+\begin_inset Formula $a\,b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Abstand:
+ mittel 
+\begin_inset Formula $a\ b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Abstand:
+ groß 
+\begin_inset Formula $a\quad b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Doppelter großer Abstand:
+ 
+\begin_inset Formula $a\qquad b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Man achte darauf,
+ dass nach dem Mathebefehl ein Leerzeichen steht:
+ 
+\begin_inset Formula $\alpha a$
+\end_inset
+
+ % Hinweis:
+ $
+\backslash
+alphaa$ funktioniert nicht
+\end_layout
+
+\begin_layout Itemize
+Klammern,
+ deren Größe sich dem Inhalt anpassen:
+ 
+\begin_inset Formula $\left[\sqrt{x^{2}}\right]$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left(\sqrt{x^{2}}\right)$
+\end_inset
+
+,
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left|\sqrt{x^{2}}\right|$
+\end_inset
+
+ statt 
+\begin_inset Formula $[\sqrt{x^{2}}]$
+\end_inset
+
+,
+ 
+\begin_inset Formula $(\sqrt{x^{2}})$
+\end_inset
+
+,
+ 
+\begin_inset Formula $|\sqrt{x^{2}}|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Klammern und senkrechte Striche in unterschiedlicher Größe:
+ 
+\begin_inset Formula $\bigr)$
+\end_inset
+
+ 
+\begin_inset Formula $\biggr)$
+\end_inset
+
+ 
+\begin_inset Formula $\Biggr)$
+\end_inset
+
+ 
+\begin_inset Formula $\bigl($
+\end_inset
+
+ 
+\begin_inset Formula $\biggl($
+\end_inset
+
+ 
+\begin_inset Formula $\Biggl($
+\end_inset
+
+ 
+\begin_inset Formula $\bigr]$
+\end_inset
+
+ 
+\begin_inset Formula $\biggr]$
+\end_inset
+
+ 
+\begin_inset Formula $\Biggr]$
+\end_inset
+
+ 
+\begin_inset Formula $\bigl[$
+\end_inset
+
+ 
+\begin_inset Formula $\biggl[$
+\end_inset
+
+ 
+\begin_inset Formula $\Biggl[$
+\end_inset
+
+ 
+\begin_inset Formula $\bigr|$
+\end_inset
+
+ 
+\begin_inset Formula $\biggr|$
+\end_inset
+
+ 
+\begin_inset Formula $\Biggr|$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Matrix:
+ 
+\begin_inset Formula $\left(\begin{matrix}11 & 12\\
+21 & 22
+\end{matrix}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Limes:
+ 
+\begin_inset Formula $\lim_{x\rightarrow\infty}$
+\end_inset
+
+ oder 
+\begin_inset Formula ${\displaystyle \lim_{x\rightarrow\infty}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Geschweifte Klammer unterhalb:
+ 
+\begin_inset Formula $\underbrace{1+2+3}_{=6}+4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Geschweifte Klammer oberhalb:
+ 
+\begin_inset Formula $1+\overbrace{2+3+4}^{=9}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Strich unterhalb:
+ 
+\begin_inset Formula $\underline{z}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Teile von Formeln können auch in unterschiedlichen Farbgebungen gesetzt werden:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula ${\color{blue}\sin\left({\color{brown}x}\right)^{2}+{\color{magenta}\cos}}\left(x\right)^{2}={\color{green}1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Sonderzeichen:
+ 
+\begin_inset Formula $\smiley$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Je nach Umgebung (in-Zeile-Formel oder abgesetzte Formel) werden einige Elemente in unterschiedlicher Größe dargestellt:
+\begin_inset Formula $\int_{0}^{\infty}\mathrm{sin}(x)\,\mathrm{d}x$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}\mathrm{sin}(x)\,\mathrm{d}x
+\]
+
+\end_inset
+
+In-Zeile-Formeln können in der Größe von abgesetzten Formeln gesetzt werden:
+ 
+\begin_inset Formula ${\displaystyle {\displaystyle \int_{0}^{\infty}\mathrm{sin}(x)\,\mathrm{d}x}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Latex kennt eine Vielzahl an Sonderzeichen:
+ Erkennung von Sonderzeichen:
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://detexify.kirelabs.org/classify.html
+\end_layout
+
+\end_inset
+
+ Übersicht der Sonderzeichen:
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://mirrors.ctan.org/info/symbols/comprehensive/symbols-a4.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die nachfolgende Formel ist sehr lang und wird umgebrochen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{multline*}
+b_{k}=\frac{2}{T}\,\Biggl(\underbrace{\int_{-\frac{T}{2}}^{-\frac{T}{4}}-f_{3}\left(\frac{T}{2}+t\right)\,\mathrm{sin}\left(k\,\frac{2\,\pi}{T}\,t\right)\,\mathrm{d}t}_{A}+\underbrace{\int_{-\frac{T}{4}}^{0}-f_{3}\left(-t\right)\,\mathrm{sin}\left(k\,\frac{2\,\pi}{T}\,t\right)\,\mathrm{d}t}_{B}+\\
+\underbrace{\int_{0}^{\frac{T}{4}}f_{3}\left(t\right)\,\mathrm{sin}\left(k\,\frac{2\,\pi}{T}\,t\right)\,\mathrm{d}t}_{C}+\underbrace{\int_{\frac{T}{4}}^{\frac{T}{2}}f_{3}\left(\frac{T}{2}-t\right)\,\mathrm{sin}\left(k\,\frac{2\,\pi}{T}\,t\right)\,\mathrm{d}t}_{D}\Biggr)
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mit der align-Umgebung kann man sehr gut Formeln untereinander setzen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+b_{k} & =\frac{2}{T}\,\left(\int_{-\frac{T}{2}}^{0}f\left(t\right)\,\mathrm{sin}\left(k\,\frac{2\,\pi}{T}\,t\right)\,\mathrm{d}t+\int_{0}^{\frac{T}{2}}-f\left(t-\frac{T}{2}\right)\,\mathrm{sin}\left(k\,\frac{2\,\pi}{T}\,t\right)\,\mathrm{d}t\right)\quad\biggl|\text{Zeitversatz}\\
+ & =\frac{2}{T}\,\left(\int_{-\frac{T}{2}}^{0}f\left(t\right)\,\mathrm{sin}\left(k\,\frac{2\,\pi}{T}\,t\right)\,\mathrm{d}t-\int_{-\frac{T}{2}}^{\frac{T}{2}-\frac{T}{2}}f\left(t-\frac{T}{2}+\frac{T}{2}\right)\,\mathrm{sin}\left(k\,\frac{2\,\pi}{T}\,\left(t+\frac{T}{2}\right)\right)\,\mathrm{d}t\right)\biggl|\text{Vereinfachen}\\
+ & =\frac{2}{T}\,\left(\int_{-\frac{T}{2}}^{0}f\left(t\right)\,\mathrm{sin}\left(k\,\frac{2\,\pi}{T}\,t\right)\,\mathrm{d}t-\int_{-\frac{T}{2}}^{0}f\left(t\right)\,\mathrm{sin}\left(k\,\frac{2\,\pi}{T}\,t+k\,\frac{2\,\pi}{T}\,\frac{T}{2}\right)\,\mathrm{d}t\right)\quad\biggl|\text{kürzen}\\
+ & =\frac{2}{T}\,\left(\int_{-\frac{T}{2}}^{0}f\left(t\right)\,\mathrm{sin}\left(k\,\frac{2\,\pi}{T}\,t\right)\,\mathrm{d}t-\int_{-\frac{T}{2}}^{0}f\left(t\right)\,\mathrm{sin}\left(k\,\frac{2\,\pi}{T}\,t+k\,\pi\right)\,\mathrm{d}t\right)\quad\biggl|\text{kürzen}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Abbildungen als Gleitobjekte
+\end_layout
+
+\begin_layout Standard
+Gleitobjekte sind nicht fest im Text verankert,
+ sondern werden durch LaTeX so verschoben,
+ dass der Text und die Abbildung im Idealfall die Seite vollständig ausfüllen.
+ Auf Abbildungen wird mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:plots"
+nolink "false"
+
+\end_inset
+
+ verwiesen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename figures/01plot/plotdin.pdf
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+null
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dies ist eine Abbildung mit einer Abbildungsunterschrift,
+ die die Abbildung beschreibt.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:plots"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Tabellen
+\end_layout
+
+\begin_layout Standard
+Die Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:komma"
+nolink "false"
+
+\end_inset
+
+ zeigt exemplarisch den Aufbau einer Tabelle.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="right" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row endfirsthead="true">
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Station
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Messwert
+\begin_inset space ~
+\end_inset
+
+(V)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4711
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+000
+\end_layout
+
+\end_inset
+
+3,14
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0815
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+000
+\end_layout
+
+\end_inset
+
+2,74
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0123456789
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+000
+\end_layout
+
+\end_inset
+
+2,345
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0123456
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+00
+\end_layout
+
+\end_inset
+
+12,3
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+00
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+007
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2345,3
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+00
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row caption="true">
+<cell multicolumn="1" alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Messwertabelle verschiedener Unterstationen 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:komma"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bei Tabellen sind insbesondere folgende Punkte wichtig:
+\end_layout
+
+\begin_layout Itemize
+Zusammengehörige Zahlenwerte sind untereinander angeordnet,
+ auch wenn eine Anordnung nebeneinander Platzsparender ist.
+ Untereinander angeordnete Zahlenwerte sind leichter zu vergleichen.
+\end_layout
+
+\begin_layout Itemize
+Zahlenwerte sind untereinander am Komma ausgerichtet.
+ Wenn die Zahl kein Komma enthält,
+ wird sie dort ausgerichtet,
+ wo das Komma stehen würde (Nach der letzten Ziffer).
+\end_layout
+
+\begin_layout Itemize
+Die Einheit steht entweder in der Spaltenüberschrift oder hinter jedem Zahlenwert.
+\end_layout
+
+\begin_layout Itemize
+Die Tabellenüberschrift steht über der Tabelle,
+ nicht unterhalb
+\end_layout
+
+\begin_layout Itemize
+Tabellen werden im Text erklärt.
+\end_layout
+
+\begin_layout Itemize
+Sehr große Tabellen mit Messwerten oder gerechneten Werten werden häufig besser als Grafik dargestellt.
+\end_layout
+
+\begin_layout Chapter
+Anhänge
+\end_layout
+
+\begin_layout Standard
+Für Anhänge gilt,
+ dass das Dokument auch verständlich sein,
+ soll,
+ wenn Anhänge fehlen würden.
+ Lange Tabellen mit Messdaten können beispielsweise in den Anhang aufgenommen werden,
+ oder umfangreiche Konstruktionszeichnungen.
+ Als Beispiel sind hier in Anhang 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Wichtige-Abbildung"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ und Anhang 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Wichtige-Tabelle"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ Anhänge beigefügt.
+\end_layout
+
+\begin_layout Chapter
+Aufzählungen und Nummerierungen
+\end_layout
+
+\begin_layout Standard
+Insbesondere in den Naturwissenschaften ist es häufig sinnvoll statt einem langen Fließtext eine Aufzählung oder eine Nummerierung zu verwenden.
+ Aufzählungen dienen:
+\end_layout
+
+\begin_layout Itemize
+der Übersichtlichkeit
+\end_layout
+
+\begin_layout Itemize
+der Strukturierung
+\end_layout
+
+\begin_layout Itemize
+zur Nennung verschiedener Punkte,
+ wenn keine Reihenfolge festgelegt werden kann.
+\end_layout
+
+\begin_layout Standard
+Eine Nummerierung wird verwendet,
+ wenn eine Reihenfolge genannt werden kann.
+ Als Beispiel seien hier die fünf Sicherheitsregeln der Elektrotechnik genannt:
+\end_layout
+
+\begin_layout Enumerate
+Freischalten
+\end_layout
+
+\begin_layout Enumerate
+Gegen Wiedereinschalten sichern
+\end_layout
+
+\begin_layout Enumerate
+Spannungsfreiheit feststellen
+\end_layout
+
+\begin_layout Enumerate
+Erden und Kurzschließen
+\end_layout
+
+\begin_layout Enumerate
+Benachbarte unter Spannung stehende Teile abdecken oder abschranken.
+\end_layout
+
+\begin_layout Chapter
+Hyperlinks
+\end_layout
+
+\begin_layout Standard
+Hyperlinks können mit einem Rahmen umfasst werden,
+ der am Display angezeigt,
+ aber nicht ausgedruckt wird.
+ Dies zeigt die Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:linkmitrahmen"
+nolink "false"
+
+\end_inset
+
+.
+ Dies ist der Standardfall.
+ Nicht alle PDF-Betrachtungsprogramme heben hyperlinks optisch hervor.
+ Das Programm SumatraPDF tut dies beispielsweise nicht.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename figures/05_rahmenumlinks/mitrahmen.png
+	width 5cm
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+null
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hyperlink mit optischer Hervorhebung mit einem blauen Rahmen
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:linkmitrahmen"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dies kann unterbunden werden mit folgenden Optionen des Paketes hyperref:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+usepackage[colorlinks=false,pdfborder={0 0 0}]  {hyperref}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:linkohnerahmen"
+nolink "false"
+
+\end_inset
+
+ zeigt das Ergebnis.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename figures/05_rahmenumlinks/ohnerahmen.png
+	width 5cm
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+null
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hyperlink ohe optischer Hervorhebung mit einem blauen Rahmen
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:linkohnerahmen"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Quellcode
+\end_layout
+
+\begin_layout Standard
+In LaTeX gibt es das Paket Listings,
+ mit dem recht komfortabel Quellcode in das Dokument aufgenommen werden kann.
+ Hier ist ein Beispiel:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "figures/02programmlisting/SplitPDFInSinglePages.ps"
+lstparams "caption={{Kurzer Batch-Code}},label={kurzerbatchcode}"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Im folgenden Beispiel ist der Code farblich gekennzeichnet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "figures/04MatlabCode/matlabcode.m"
+lstparams "language=Matlab,caption={Testunterschrift},label={foo}"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hier ist ein weiteres Beispiel,
+ welches einen Seitenumbruch,
+ Listing-Unterschrift und einen Querverweis (Es handelt sich um das Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lstsehrlangeslisting"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) auf das Listing enthält:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "figures/02programmlisting/SehrLangerQuellCode.txt"
+lstparams "captionpos=b,label=lstsehrlangeslisting,caption={Unterschrift des sehr langen Quellcodes}"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hier ist ein Listing in einer Zeile 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinline[language=C]|for(int i = 0,
+ i<5,i++){i--;}print('a');struct A;// Kommentar|
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das ist ein inline-Code ohne Farben:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+lstinline[]|for(int i = 0,
+ i<5,i++){i--;}print('a');struct A;// Kommentar|
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Zusammenfassung
+\end_layout
+
+\begin_layout Standard
+Hier wird beschrieben,
+ welche Erkenntnisse sich aus der Arbeit ergeben.
+ Weiterhin kann hier auch angegeben werden,
+ welche Themen weiter untersucht werden können oder sollten.
+\end_layout
+
+\begin_layout Chapter
+Hinweise zum Literaturverzeichnis mit Biblatex
+\end_layout
+
+\begin_layout Standard
+Mit LaTeX/LyX kann ein Literaturverzeichnis mit oder ohne das System Biblatex verwendet werden.
+ Die Literaturquellen aus der Datenbank werden in das Literaturverzeichnis des PDF-Dokumentes übernommen,
+ wenn durch Verweise auf die Quellen verwiesen wird.
+ 
+\end_layout
+
+\begin_layout Standard
+Hier wird exemplarisch auf Literaturverweise eingegangen.
+ Ein guter Start in das Thema 
+\begin_inset Quotes gld
+\end_inset
+
+Wissenschaftliches Schreiben
+\begin_inset Quotes grd
+\end_inset
+
+ ist in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kuehtz2011biblatex"
+literal "false"
+
+\end_inset
+
+ gegeben.
+ Beim Zitieren von Internetquellen ist wichtig,
+ permanente Links zu verwenden.
+ Beispielsweise wird in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wikipediaelektrotechnikbiblatex"
+literal "false"
+
+\end_inset
+
+ auf den Wikipedia-Artikel zur Elektrotechnik verwiesen.
+ Hier ist ein Zitat des Handbuches über das SI-System 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sisystem"
+literal "false"
+
+\end_inset
+
+,
+ einer Literatur,
+ die im Internet zugänglich ist.
+\end_layout
+
+\begin_layout Standard
+Wenn Sie Biblatex verwenden,
+ legen Sie eine Textdatei mit der Dateiendung .bib an.
+ Der nachfolgende Quellcode zeigt beispielhaft den Inhalt einer bib-Datei:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+@online{sisystem,
+\end_layout
+
+\begin_layout Plain Layout
+
+author		 =	{International Bureau of Weights and Measures (BIPM)},
+\end_layout
+
+\begin_layout Plain Layout
+
+title		 =	{{The International System of Units (SI)}},
+\end_layout
+
+\begin_layout Plain Layout
+
+date		 =   {2029-11-11},
+\end_layout
+
+\begin_layout Plain Layout
+
+url			 =	{https://www.bipm.org/documents/20126/41483022/SI-Brochure-9.pdf/fcf090b2-04e6-88cc-1149-c3e029ad8232?version=4.0&t=1736179646242&download=true},
+\end_layout
+
+\begin_layout Plain Layout
+
+doi	         =   {},
+\end_layout
+
+\begin_layout Plain Layout
+
+organization =  {},
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+note		 =	{},
+\end_layout
+
+\begin_layout Plain Layout
+
+notiz		 =	{Interne Notizen},
+\end_layout
+
+\begin_layout Plain Layout
+
+subtitle     =   {},
+\end_layout
+
+\begin_layout Plain Layout
+
+titleaddon   =   {},
+\end_layout
+
+\begin_layout Plain Layout
+
+language     = {},
+\end_layout
+
+\begin_layout Plain Layout
+
+version      = {9th edition,
+ 2019},
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+addendum     = {},
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+pubstate = {}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Üblicherweise werden folgende Datenfelder gefüllt:
+ author,
+ title,
+ date (das ist dann das Datum des letzten Aufrufes),
+ url,
+ version (das ist dann die Versionsnummer und das Veröffentlichungsjahr).
+ Folgende Felder sind optional:
+ doi,
+ organization,
+ note,
+ notiz (dort können interne Notizen über die Quelle angegeben werden,
+ die nicht im Literaturverzeichnis erscheinen),
+ subtitle,
+ titleaddon,
+ language,
+ addendum,
+ pupstate
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "BibTexDatenbank"
+encoding "default"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\start_of_appendix
+Wichtige Abbildung
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Wichtige-Abbildung"
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figures/01plot/plotdin.pdf
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Wichtige Tabelle
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Wichtige-Tabelle"
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="right" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row endfirsthead="true">
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Station
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Messwert
+\begin_inset space ~
+\end_inset
+
+(V)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4711
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+000
+\end_layout
+
+\end_inset
+
+3,14
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0815
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Phantom Phantom
+status open
+
+\begin_layout Plain Layout
+000
+\end_layout
+
+\end_inset
+
+2,74
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0123456789
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+000
+\end_layout
+
+\end_inset
+
+2,345
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0123456
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+00
+\end_layout
+
+\end_inset
+
+12,3
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+00
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+007
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2345,3
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+00
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row caption="true">
+<cell multicolumn="1" alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabelle im Anhang 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:wichtigetabelle"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
