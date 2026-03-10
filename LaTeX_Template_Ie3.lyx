@@ -10,28 +10,29 @@
 
 \usepackage{tikz}
 \usepackage{tikzpagenodes} 
-%\usepackage{palatino} % Fuer Schriftart Palatino (Optional)
-%\usepackage{mathpazo} % Fuer Schriftart Palatino (Optional)
-\usepackage[notextcomp]{stix} % Fuer Schriftart Stix
+%\usepackage{palatino} % For Palatino font (optional)
+%\usepackage{mathpazo} % For Palatino font (optional)
+\usepackage[notextcomp]{stix} % For STIX font
 \usepackage{upgreek}
 \usepackage{datetime}
 \usepackage{graphicx}
 \usepackage{longtable}
-\usepackage{acronym} % Fuer Abkuerzungen
+\usepackage{acronym} % For abbreviations
 \usepackage{multicol}
 \usepackage{lipsum}
 \usepackage{longtable}
 \usepackage{subfig}
 \usepackage[listings]{tcolorbox}
-\usepackage{ifthen} % fuer if-vergleich
+\usepackage{ifthen} % For conditional comparisons
 
 
-% TS 2024-01-08: Die nachfolgenden Befehle sind augenscheinlich mit
-% LyX 2.4.2.1 und MikTeX 24.4 obsolet:
-% Listings wird durch lyx spaeter automatisch nochmal zugefuegt.
-% Der automatisch zugefuegte Befehl \renewcommand{\lstlistlistingname}{\inputencoding{latin9}Programmlistings}
-% fuehrt aber dazu dass \ihead{\headmark} nicht mit der Benutzung von \lstlistoflistings zu vereinbaren ist.
-% Abhilfe: hier scrhack und dann listings laden.
+% TS 2024-01-08: The following commands appear to be obsolete
+% with LyX 2.4.2.1 and MikTeX 24.4:
+% Listings is automatically loaded later by LyX.
+% The automatically added command 
+% \renewcommand{\lstlistlistingname}{\inputencoding{latin9}Programmlistings}
+% causes incompatibility between \ihead{\headmark} and \lstlistoflistings.
+% Workaround: load scrhack here first and then listings.
 %\usepackage{scrhack}
 %\usepackage{listings}
 
@@ -49,9 +50,9 @@
 \usepackage{color}
 \usepackage{blindtext}
 \urlstyle{rm}
-\usepackage{capt-of}
+% CaptOf error \usepackage{capt-of}
 
-% Korrektur der Abstaende zwischen Funktion und Klammern:
+% Correction of spacing between functions and parentheses:
 \let\originalleft\left
 \let\originalright\right
 \renewcommand{\left}{\mathopen{}%
@@ -59,13 +60,13 @@
 \renewcommand{\right}{\aftergroup%
 \egroup\originalright}
 
-% Farben fuer Code-Listings
+% Colors for code listings
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
-% Paket setspace fuer den Zeilenabstand in der Titelei
+% Package setspace for line spacing on the title page
 \usepackage{setspace}
 
 %\usepackage{url}
@@ -75,53 +76,49 @@
 \usepackage{booktabs}
 \mathcode `,="013B
 \mathcode `.="613A
-%\makeatletter
-%% Der nachfolgende Befehl erfordert das Paket amsmath
-%\newcommand{\eqnum}{\refstepcounter{equation}\textup{\tagform@{\theequation}}}
-%\makeatother
-%\renewcommand{\theequation}{\ifnum\thechapter=666 FS\else \thechapter\fi .\arabic{equation}}
-%\makeatletter
-%\DeclareMathSizes{\@xpt}{\@xpt}{\@xpt}{\@xpt}
-%\makeatother
-%\DeclareMathSizes{10.95}{11}{13}{13}
 
 \tcbuselibrary{skins}
 
-\newcommand{\vornamenachnamematnr}{Verfasser/-in}
-\renewcommand{\vornamenachnamematnr}{Vorname Nachname, 7038602}
+\newcommand{\vornamenachnamematnr}{Author}
+\renewcommand{\vornamenachnamematnr}{First Name Last Name, 7038602}
 
-% Titel, Variante A:
-\newcommand{\titelzeileeins}{Titel der Arbeit}
+% Title, Variant A:
+\newcommand{\titelzeileeins}{Title of the Thesis}
 \renewcommand{\titelzeileeins}{}
-\newcommand{\titelzeilezwei}{optional zweite Zeile}
+\newcommand{\titelzeilezwei}{Optional second line}
 \renewcommand{\titelzeilezwei}{}
 
-% Titel, Variante B
-\newcommand{\titelmitgroessenangabe}{\Huge Titel der Arbeit}
-\renewcommand{\titelmitgroessenangabe}{\Large Titel der Arbeit. Der Titel kann auch länger sein. Der Text des Titels wird automatisch umgebrochen.}
+% Title, Variant B
+\newcommand{\titelmitgroessenangabe}{\Huge Title of the Thesis}
+\renewcommand{\titelmitgroessenangabe}{\Large Title of the Thesis. The title may also be longer. The text will wrap automatically.}
 %\renewcommand{\titelmitgroessenangabe}{}
 
-\newcommand{\untertitelmitgroessenangabe}{\Huge Untertitel der Arbeit}
-\renewcommand{\untertitelmitgroessenangabe}{\Large Untertitel der Arbeit. Der Titel kann auch länger sein. Der Text des Titels wird automatisch umgebrochen.}
-\newcommand{\tstitleheadgroessenangabe}{\Huge titlehead}
-\renewcommand{\tstitleheadgroessenangabe}{\Large titlehead laenger.}
+\newcommand{\untertitelmitgroessenangabe}{\Huge Subtitle of the Thesis}
+\renewcommand{\untertitelmitgroessenangabe}{\Large Subtitle of the Thesis. The subtitle may also be longer. The text will wrap automatically.}
 
-\newcommand{\abschluss}{Bachelor/Master of ... (Bezeichnung)}
+\newcommand{\tstitleheadgroessenangabe}{\Huge titlehead}
+\renewcommand{\tstitleheadgroessenangabe}{\Large extended titlehead.}
+
+\newcommand{\abschluss}{Bachelor/Master of ... (Degree)}
 \renewcommand{\abschluss}{Bachelor of Engineering (B.Eng.)}
+
 \newcommand{\studiengang}{....\,}
-\renewcommand{\studiengang}{Elektro- und Informationstechnik}
+\renewcommand{\studiengang}{Electrical and Information Engineering}
+
 \newcommand{\studienrichtung}{....\,}
-\renewcommand{\studienrichtung}{Elektromobilität und Energiesysteme}
-\newcommand{\erstpruefer}{Erste/-r Prüfer/-in:}
-\renewcommand{\erstpruefer}{Erster Prüfer: Prof. Dr.-Ing. T. Siaenen}
-\newcommand{\zweitpruefer}{Zweite/-r Prüfer/-in:}
-\renewcommand{\zweitpruefer}{Zweite Prüferin: Dr. C. Müller}
+\renewcommand{\studienrichtung}{Electromobility and Energy Systems}
+
+\newcommand{\erstpruefer}{First Examiner:}
+\renewcommand{\erstpruefer}{First Examiner: Prof. Dr.-Ing. T. Siaenen}
+
+\newcommand{\zweitpruefer}{Second Examiner:}
+\renewcommand{\zweitpruefer}{Second Examiner: Dr. C. Müller}
+
 \newcommand{\einreichungsdatum}{YYYY-MM-DD}
 \renewcommand{\einreichungsdatum}{2020-10-15}
-\newcommand{\firmenhinweis}{Diese Arbeit wurde im Rahmen eines Praxisprojektes bei ... (Firmenname) erstellt}
-\renewcommand{\firmenhinweis}{Diese Arbeit wurde im Rahmen eines Praxisprojektes bei XYZ GmbH erstellt.}
 
-
+\newcommand{\firmenhinweis}{This thesis was prepared within the framework of a practical project at ... (Company Name)}
+\renewcommand{\firmenhinweis}{This thesis was prepared within the framework of a practical project at XYZ GmbH.}
 
 \makeatletter         
 \renewcommand\maketitle{
@@ -136,88 +133,67 @@
 \definecolor{otftitel}{RGB}{0,54,119}
 \definecolor{otfhellblau}{RGB}{0,159,226}
 \begin{tikzpicture}[remember picture,overlay]
-      %\node (back names) [shape=rectangle, fill=blue!15!white, minimum height=40mm, minimum width=\paperwidth, anchor=north west] at (current page.north west) {
-      \node at ([shift={(159.5mm,-22.95mm)}]current page.north west) {\includegraphics[width=76.76mm]{figures/Vorlagenbilder/UniversityLogo.pdf}};
-	  \draw[color=black, line width=0.35mm] (-9.0mm,-23.45mm) -- ++(177.9mm,0mm);
-% Template:	  \node[color=otfhellblau,anchor=base west] at ([shift={(45.6mm,-41.3mm)}]current page.north west) {\textsf{Name der Fakultät}};
-	 
-	  \node[color=black,anchor=base west, scale=1.005] at ([shift={(18.7mm,-68.9mm)}]current page.north west) {\textbf{\fontfamily{phv}\fontseries{b}\selectfont \vornamenachnamematnr}};
 
-% Original-Template, Titel Variante A
-\node[color=otftitel,anchor=base west, scale=1.126] at ([shift={(15.0mm,-83.15mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \Huge \titelzeileeins}};  
-\node[color=otftitel,anchor=base west, scale=1.126] at ([shift={(19.3mm,-96.2mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \Huge \titelzeilezwei}};
+\node at ([shift={(159.5mm,-22.95mm)}]current page.north west) 
+{\includegraphics[width=76.76mm]{figures/Vorlagenbilder/UniversityLogo.pdf}};
 
-% Titel, Variante B:
-\node[color=black,anchor=north west, scale=1.6, text width=100mm, text badly ragged] at ([shift={(18.4mm,-71.4mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \titelmitgroessenangabe}}; 
-\node[color=black,anchor=north west, scale=1.03, text width=160mm, text badly ragged, font=\linespread{1.5}\fontfamily{phv}\fontseries{sf}\selectfont] at ([shift={(18.4mm,-101.0mm)}]current page.north west) {\Large\untertitelmitgroessenangabe}; 
+\draw[color=black, line width=0.35mm] (-9.0mm,-23.45mm) -- ++(177.9mm,0mm);
+
+\node[color=black,anchor=base west, scale=1.005] 
+at ([shift={(18.7mm,-68.9mm)}]current page.north west) 
+{\textbf{\fontfamily{phv}\fontseries{b}\selectfont \vornamenachnamematnr}};
+
+% Title Variant A
+\node[color=otftitel,anchor=base west, scale=1.126] 
+at ([shift={(15.0mm,-83.15mm)}]current page.north west) 
+{\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \Huge \titelzeileeins}};  
+
+\node[color=otftitel,anchor=base west, scale=1.126] 
+at ([shift={(19.3mm,-96.2mm)}]current page.north west) 
+{\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \Huge \titelzeilezwei}};
+
+% Title Variant B
+\node[color=black,anchor=north west, scale=1.6, text width=100mm, text badly ragged] 
+at ([shift={(18.4mm,-71.4mm)}]current page.north west) 
+{\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \titelmitgroessenangabe}}; 
+
+\node[color=black,anchor=north west, scale=1.03, text width=160mm, text badly ragged, 
+font=\linespread{1.5}\fontfamily{phv}\fontseries{sf}\selectfont] 
+at ([shift={(18.4mm,-101.0mm)}]current page.north west) 
+{\Large\untertitelmitgroessenangabe}; 
+
 \draw[color=black, line width=0.35mm] (-9.0mm,-79.45mm) -- ++(177.9mm,0mm);
-\node[color=black,anchor=north west, scale=1.03, text width=160mm, text badly ragged, font=\linespread{1.5}\fontfamily{phv}\fontseries{sf}\selectfont] at ([shift={(18.4mm,-122.4mm)}]current page.north west) {\einreichungsdatum}; 
-\node[color=black,anchor=north west, scale=1.03, text width=160mm, text badly ragged, font=\linespread{1.5}\fontfamily{phv}\fontseries{sf}\selectfont] at ([shift={(18.4mm,-172.4mm)}]current page.north west) {\tstitleheadgroessenangabe}; 
-%\node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-110.5mm)}]current page.north west) {\fontfamily{phv}\fontseries{sf}\selectfont Abschlussarbeit zur Erlangung des Hochschulgrades};
-% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-116.2mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \abschluss}};
-% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-128.0mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont im Studiengang \studiengang\ }};
-% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-133.8mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont in der Studienrichtung \studienrichtung\ }};
-% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-139.6mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont an der Ostfalia Hochschule für angewandte Wissenschaften}};
-% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-145.4mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont -- Hochschule Braunschweig/Wolfenbüttel}};
-% \draw[color=otfhellblau, line width=0.35mm] (-1mm,-124.25mm) -- ++(153.35mm,0mm);
-% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-157.2mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \erstpruefer}};
-% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-163.0mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont \zweitpruefer}};
-% \node[color=black,anchor=base west, scale=1.003] at ([shift={(23.6mm,-174.6mm)}]current page.north west) {\textsf{\fontfamily{phv}\fontseries{sf}\selectfont Eingereicht am: \einreichungsdatum}};	  
-% \node[color=black,anchor=north west, scale=1.003] at ([shift={(23.6mm,-181.8mm)}]current page.north west) {\textsf{\parbox{\textwidth}{\fontfamily{phv}\fontseries{sf}\selectfont \firmenhinweis}}};	 
-%\node[color=otftitel,anchor=base west, scale=0.81] at ([shift={(109.5mm,-281.6mm)}]current page.north west) {\fontfamily{phv}\fontseries{sf}\selectfont \textsf{Salzgitter $\cdot$ Suderburg $\cdot$} \textbf{\textsf{Wolfenbüttel}} \textsf{$\cdot$ Wolfsburg}};
+
+\node[color=black,anchor=north west, scale=1.03, text width=160mm, text badly ragged, 
+font=\linespread{1.5}\fontfamily{phv}\fontseries{sf}\selectfont] 
+at ([shift={(18.4mm,-122.4mm)}]current page.north west) 
+{\einreichungsdatum}; 
+
+\node[color=black,anchor=north west, scale=1.03, text width=160mm, text badly ragged, 
+font=\linespread{1.5}\fontfamily{phv}\fontseries{sf}\selectfont] 
+at ([shift={(18.4mm,-172.4mm)}]current page.north west) 
+{\tstitleheadgroessenangabe}; 
+
 \end{tikzpicture}
-}} % Note the extra }
+}} 
 \makeatother
-\title{} % Damit der Titel definiert ist/ andernfalls gibt es eine Fehlermeldung
+
+\title{} % Title must be defined, otherwise an error occurs
 \author{}
 \date{}
 
-% Pi immer aufrecht darstellen
+% Always display pi upright
 \renewcommand{\pi}{\uppi}
 
-
-% Roemische Seitenzahlen bis zur ersten Kapitel
+% Roman page numbering until first chapter
 \pagenumbering{roman}
 
 \urlstyle{tt}
-%\renewcommand{\UrlBreaks}{\do\/\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}
-
-
-%\usepackage[style=authoryear-icomp, % Zitations- bzw. Literaturstil
-%isbn=false, % ISBN nicht anzeigen
-%backrefstyle=three+, % fasst Seiten zusammen, z.B. S. 2f, 6ff, 7-10
-%ibidpage=true, % Bei gleichen Seitenzahlen die Seitenzahl bei ebd. weglassen
-%pagetracker=true,
-%giveninits=true, % Vornamen der Autoren im Literaturverzeichnis abkürzen
-%uniquename=init,
-%dashed=false, % Im Literaturverzeichnis bei zwei Werken gleichen Autors den Autor trotzdem überall aufführen
-%]{biblatex}
-%\DefineBibliographyStrings{german}{%
-%  and     = {u\adddot},
-%  urlseen = {abgerufen am},
-%  urlfrom = {online unter},
-%}
-%\DeclareDelimFormat[bib,biblist]{nametitledelim}{\addcolon\addspace}
-%\AtBeginBibliography{%
-%  \renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}}
-
-%\DeclareFieldFormat{url}{\bibstring{urlfrom}\addcolon\space\url{#1}}
-%\DeclareFieldFormat{url}{\mkbibbrackets{online}\addspace\url{#1}}
-%\DeclareFieldFormat{urldate}{\mkbibbrackets{#1}}
-
-
-
-% Ein potenzieller Fehler ist, dass LyX am Ende der Praeambel das Listings-Paket laed und
-% den Befehl \renewcommand{\lstlistlistingname}{\inputencoding{latin9}Programmlistings}
-% zufuegt. Das kann ggf. vorher mit \let\rsqlstlistlistingname\lstlistlistingname und am Anfang des 
-% Dokumentes mit einem \let\lstlistlistingname\rsqlstlistlistingname behoben werden.
-% Eventuell handelt es sich um eine Inkompartibilitaet von \lstlistoflistings und \ihead{\headmark}
-%\let\lstlistlistingname\rsqlstlistlistingname
 \end_preamble
 \options DIV=15, listtotoc, pointlessnumbers
 \use_default_options true
 \maintain_unincluded_children no
-\language ngerman
+\language english
 \language_package default
 \inputencoding utf8
 \fontencoding auto
@@ -293,7 +269,7 @@
 \paragraph_indentation default
 \is_math_indent 0
 \math_numbering_side default
-\quotes_style german
+\quotes_style english
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
@@ -314,7 +290,7 @@
 \begin_body
 
 \begin_layout Title
-Formatvorlage für Berichte und Tipps zu 
+Template for reports and Tips on 
 \begin_inset ERT
 status open
 
@@ -331,32 +307,27 @@ LaTeX
 \end_layout
 
 \begin_layout Subtitle
-Abschlussarbeit zur Erlangung des Hochschulgrades
-\series medium
- Bachelor of Engineering (B.Eng.)
+Thesis submitted in partial fulfillment of the requirements for the degree of Bachelor,
+ Master and PHD
 \end_layout
 
 \begin_layout Date
-Herausgeber und/oder Datum 2021-03-16
+Publisher and/or date
+\end_layout
+
+\begin_layout Date
+2026-03-16
 \end_layout
 
 \begin_layout Author
-Thorbjörn Siaenen (7038602)
+Maria Musterfrau (458697)
 \end_layout
 
 \begin_layout Titlehead
-\begin_inset Graphics
-	filename figures/Vorlagenbilder/cc-by.png
-	width 20mm
-
-\end_inset
-
- Dieses Werk ist lizenziert unter einer Creative Commons Namensnennung 4.0 International Lizenz.
- https://creativecommons.org/licenses/by/4.0/
 \begin_inset Newline newline
 \end_inset
 
-Zuletzt getestet mit LyX 2.4.2.1 und MikTeX 24.4 am 2025-01-08
+Last tested with LyX 2.4.4 and MikTeX 25.12 on 2026-25-02
 \end_layout
 
 \begin_layout Standard
@@ -364,8 +335,7 @@ Zuletzt getestet mit LyX 2.4.2.1 und MikTeX 24.4 am 2025-01-08
 status open
 
 \begin_layout Plain Layout
-Betriebsinterne Notiz:
- Alle Änderungen an der Vorlage müssen händisch auch auf die BibTex-Variante der Vorlage übertragen werden.
+All changes made to the template must also be manually transferred to the BibTeX version of the template.
 \end_layout
 
 \end_inset
@@ -378,7 +348,7 @@ Betriebsinterne Notiz:
 status open
 
 \begin_layout Plain Layout
-Wichtig für die Normkonforme Darstellung von Internetquellen bei der Verwendung von BibLaTeX:
+This is relevant for the standards-compliant formatting of online sources when using BibLaX.
 \end_layout
 
 \end_inset
@@ -444,7 +414,7 @@ mkbibbrackets{Zugrifff am #1}}
 \end_layout
 
 \begin_layout Chapter*
-Autor(en)
+Author(s)
 \end_layout
 
 \begin_layout Standard
@@ -452,16 +422,16 @@ Maria Mustermann
 \begin_inset Newline newline
 \end_inset
 
-Matrikelnummer 7068602
+Student ID 7068602
 \begin_inset Newline newline
 \end_inset
 
-Studiengang:
- Elektrotechnik im Praxisverbund
+Degree program:
+ Elektrotechnik
 \begin_inset Newline newline
 \end_inset
 
-Studienrichtung:
+Specialization:
  Elektromobilität
 \begin_inset Newline newline
 \end_inset
@@ -482,44 +452,40 @@ Matrikelnummer 7068603
 \begin_inset Newline newline
 \end_inset
 
-Studiengang:
+Degree program:
  Elektrotechnik im Praxisverbund
 \begin_inset Newline newline
 \end_inset
 
-Studienrichtung:
+Specialization:
  Elektromobilität
 \end_layout
 
 \begin_layout Subsection*
-Erstprüferin
+First examiner
 \end_layout
 
 \begin_layout Standard
 Prof.
  Dr.-Ing.
- Marlene Muster
+ Michaela Exampel,
 \begin_inset Newline newline
 \end_inset
 
-( ggf.
- Institut für ...)
+XYZ GmbH & Co.
+ KG.
 \begin_inset Newline newline
 \end_inset
 
-Ostfalia Hochschule für Angewandte Wissenschaften – Hochschule Braunschweig/Wolfenbüttel
+Bahnhofstraße 42
 \begin_inset Newline newline
 \end_inset
 
-Salzdahlumer Straße 46/48
-\begin_inset Newline newline
-\end_inset
-
-38302 Wolfenbüttel
+32512 Musterdorf
 \end_layout
 
 \begin_layout Subsection*
-Zweitprüfer
+Second examiner
 \end_layout
 
 \begin_layout Standard
@@ -542,14 +508,13 @@ Bahnhofstraße 42
 \end_layout
 
 \begin_layout Subsection*
-Bearbeitungszeitraum
+Processing period
 \end_layout
 
 \begin_layout Standard
-Beginn:
+Start:
  2019-02-29,
- Ende:
- 2019-09-19
+ Ende 2019-09-19
 \end_layout
 
 \begin_layout Standard
@@ -560,20 +525,18 @@ Beginn:
 \end_layout
 
 \begin_layout Subsection*
-Erklärung
+Declaration
 \end_layout
 
 \begin_layout Standard
-– Hier den Text aus der Prüfungsordnung einfügen,
- in dem erklärt wird,
- dass die Arbeit selbständig erstellt wurde –
+– Insert here the text from the examination regulations stating that this thesis was prepared independently –
 \end_layout
 
 \begin_layout Standard
 \begin_inset VSpace 15mm
 \end_inset
 
-Ort/Datum eigenhändige Unterschrift
+Place/Date handwritten signature
 \end_layout
 
 \begin_layout Standard
@@ -588,28 +551,28 @@ Abstract
 \end_layout
 
 \begin_layout Standard
-Dies ist das Abstract.
- Hier steht,
- worum es geht,
- welche Methoden angewendet wurden und was die Ergebnisse sind.
+This is the abstract.
+ Here you will find what the work is about,
+ which methods were used,
+ and what the results are.
 \end_layout
 
 \begin_layout Standard
-In dieser Vorlage sind viele Verzeichnisse vorhanden.
- Besprechen Sie mit allen Beteiligten (Betreuer(in),
- Prüfer(in),
- Zweitprüfer(in)),
- welche Verzeichnisse in die Arbeit mit aufgenommen werden sollen.
+This template contains many directories.
+ Discuss with all stakeholders (supervisor,
+ examiner,
+ second examiner) which directories should be included in your thesis.
 \end_layout
 
 \begin_layout Subsection*
-Anmerkungen zu Kooperationen (Nur wenn unbedingt erforderlich)
+Notes on Cooperations (Only if absolutely necessary)
 \end_layout
 
 \begin_layout Standard
-Wenn notwendig,
- kann hier auf eventuelle Kooperationen mit Partnern hingewiesen werden.
- Weiterhin ist hier Platz für Danksagungen und Widmungen.
+If necessary,
+ any cooperations with partners can be mentioned here.
+ Furthermore,
+ there is space for acknowledgments and dedications.
 \end_layout
 
 \begin_layout Standard
@@ -622,7 +585,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Chapter*
-Abkürzungsverzeichnis
+List of Abbreviations
 \end_layout
 
 \begin_layout Standard
@@ -1170,7 +1133,7 @@ end{multicols}
 \end_layout
 
 \begin_layout Chapter*
-Symbolverzeichnis
+List of Symbols
 \end_layout
 
 \begin_layout Standard
@@ -1591,7 +1554,7 @@ lstlistoflistings
 \end_layout
 
 \begin_layout Chapter
-Einleitung
+Introduction
 \end_layout
 
 \begin_layout Standard
@@ -1607,38 +1570,15 @@ pagenumbering{arabic}
 
 \end_inset
 
-Über diese Vorlage:
- Es handelt sich um eine Vorlage für wissenschaftliche Arbeiten mit dem Satzssystem LaTeX.
- Diese Vorgabe liegt in zwei Formaten vor:
- LyX und LaTeX.
- LyX ist ein freier WYSIWYM (What you see is what you mean)-Editor,
- der LaTeX-Code erzeugt,
- der dann in eine PDF-Datei gewandelt wird.
- 
+About this template:
+ This is a template for academic writing using the LaTeX typesetting system.
+ This template is available in LyX.
+ LyX is a free WYSIWYM (What You See Is What You Mean) editor that generates LaTeX code,
+ which is then converted into a PDF file.
 \end_layout
 
 \begin_layout Standard
-Insbesondere bei Gruppenarbeiten bietet es sich alternativ an,
- als Editor Overleaf zu nutzen.
- Es handelt sich um einen kollaborativen Editor,
- bei dem in Echtzeit mehrere Personen gleichzeitig ein Textdokument (LaTeX-Code) bearbeiten können.
- Als Studierende der Ostfalia Hochschule können Sie unter 
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-www.academiccloud.de
-\end_layout
-
-\end_inset
-
- eine Installation von Overleaf nutzen,
- deren Server in Deutschland betrieben werden .
-\end_layout
-
-\begin_layout Standard
-Als Schriftart für dieses Dokument wurde STIX (
+The font chosen for this document is STIX (
 \begin_inset Flex URL
 status open
 
@@ -1649,67 +1589,41 @@ https://www.stixfonts.org/
 
 \end_inset
 
-) gewählt,
- weil davon auszugehen ist,
- dass sie sich (Stand Anfang 2021) in Zukunft in der Wissenschaftsliteratur stark verbreitet wird.
- Die Schriftart auf dem Deckblatt ist Nimbus Sans L,
- weil es eine große Ähnlichkeit zur Ostfalia-Vorlage für Abschlussarbeiten hat.
- An dieser Vorlage wird kontinuierlich verbessert.
- Bei Fragen oder Feedback dazu freut sich Prof.
- Dr.
- T.
- Siaenen unter t.siaenen@ostfalia.de über eine E-Mail.
-\end_layout
-
-\begin_layout Standard
-Es wird hier auch beschrieben,
- wie eine Qualitätssicherung der Ergebnisse erfolgt.
- Bei experimentellen Arbeiten könnte das ein Vergleich zwischen den experimentellen Ergebnissen und einer Simulation sein.
- Bei konstruktiv-planerischen Aufgaben kann eine Qualitätssicherung durch eine Überführung der Aufgabenstellung ein ein standardisiertes Problemlösungsmuster erfolgen.
- Beispiel:
- Die Aufgabe besteht darin,
- aus vielen Produkten das 
-\begin_inset Quotes gld
-\end_inset
-
-beste
-\begin_inset Quotes grd
-\end_inset
-
- auszuwählen.
- Dann wird die Qualität der Arbeit dadurch sichergestellt,
- dass eine Nutzwertanalyse durchgeführt wird.
+) ,
+ because it can be assumed that (as of early 2021) it will become widely used in scientific literature in the future.
+ The font on the cover page is Nimbus Sans L.
 \end_layout
 
 \begin_layout Chapter
-Gliederung:
- Kapitel
+Structure:
+ Chapter
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "chap:markeeineskapitels"
+name "chap:chapterlabel"
 
 \end_inset
 
-Wichtig bei der Gliederung eines Dokumentes:
- Eine Untergliederung hat immer mindestens zwei Einträge.
- Beispiel:
- Wenn ein Kapitel in Abschnitte unterteilt wird,
- dann gibt es mindestens zwei Abschnitte in dem Kapitel.
+Important when structuring a document:
+ A subdivision must always have at least two entries.
+ Example:
+ If a chapter is divided into sections,
+ then there are at least two sections in that chapter.
 \end_layout
 
 \begin_layout Section
-Gliederung:
- Abschnitt
+Structure:
+ Section
 \end_layout
 
 \begin_layout Standard
-Nach jedem Gliederungs-Element (Kapitel,
- Abschnitt,
- Unterabschnitt) steht zunächst ein beschreibender Text.
- Erst dann wird das Dokument in Unterabschnitte unterteilt.
+After each structural element (chapter,
+ section,
+ subsection),
+ there is first a descriptive text.
+ Only then is the document subdivided into subsections.
 \end_layout
 
 \begin_layout Subsection
@@ -1718,41 +1632,44 @@ Gliederung:
 \end_layout
 
 \begin_layout Standard
-Hier wird auf den Abschnitt 
+This refers 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:markeeineskapitels"
+reference "chap:chapterlabel"
 nolink "false"
 
 \end_inset
 
- verwiesen.
+ to section2.
 \end_layout
 
 \begin_layout Chapter
-Formeln
+Equations
 \end_layout
 
 \begin_layout Section
-Fließtext und Formeln
+Running text and equations
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "eq:formelnnummeriert"
+name "eq:numberedequation"
 
 \end_inset
 
-Formeln können in zwei Varianten geschrieben stehen:
- Einmal im Text:
+Equations can be written in two ways:
+ either inline in the text:
  
 \begin_inset Formula $\mathrm{sin}(x)=\pi/3$
 \end_inset
 
- wie in diesem Beispiel,
- oder als abgesetzte Formel:
  
+\end_layout
+
+\begin_layout Standard
+in this example,
+ or as a displayed equation:
 \begin_inset Formula 
 \[
 \mathrm{sin}(x)=\pi/3
@@ -1760,8 +1677,8 @@ Formeln können in zwei Varianten geschrieben stehen:
 
 \end_inset
 
-Weiterhin kann man eine Formel auch automatisch nummerieren lassen:
- 
+In addition,
+ you can have an equation numbered automaticaly
 \begin_inset Formula 
 \begin{equation}
 \mathrm{sin}(x)=\pi/3\label{eq:abgesetzteformel}
@@ -1769,17 +1686,20 @@ Weiterhin kann man eine Formel auch automatisch nummerieren lassen:
 
 \end_inset
 
-In dem Text kann dann auf die Gleichung 
+The text can then refer to Equation 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "eq:abgesetzteformel"
+reference "eq:displayed"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
 
 \end_inset
 
- (Achtung:
- Das Paket hyperref erzeugt Hyperlinks die auf der Seite an falscher Position liegen) referenziert werden.
- Zwei Abgesetzte Formeln nebeneinander können mit folgender Struktur dargestellt werden:
+ (note:
+ the hyperref package creates hyperlinks that may point to an incorrect position on the page).
+ Two displayed equations next to each other can be shown using the following structure:
 \end_layout
 
 \begin_layout Standard
@@ -1850,8 +1770,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Alternative Darstellungsweise mit Kästchen:
- 
+Alternative representation with boxes:
 \end_layout
 
 \begin_layout Standard
@@ -1903,7 +1822,7 @@ separation "3pt"
 shadowsize "4pt"
 framecolor "black"
 backgroundcolor "none"
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Formula 
@@ -1922,32 +1841,28 @@ status open
 \end_layout
 
 \begin_layout Standard
-Wenn statt der Gleichungsnummer zwei Fragezeichen erscheinen muss häufig die Datei noch einmal übersetzt,
- oder label und ref haben unterschiedliche Marken.
- Beim Konvertieren zwischen der .TEX-Datei und der PDF-Datei spricht man vom sog.
- 
-\shape italic
-Setzen
-\shape default
-.
+If two question marks appear instead of the equation number,
+ the file often needs to be compiled once more,
+ or label and ref use different identifiers.
+ Converting between the .TEX file and the PDF file is referred to as typesetting.
 \end_layout
 
 \begin_layout Section
-Regeln zum Formelsatz
+Rules for equation typesetting
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "eq:formelsatz"
+name "eq:equationtypesetting"
 
 \end_inset
 
-Für das Setzen von Formeln gibt es Regeln:
+There are rules for typesetting equations:
 \end_layout
 
 \begin_layout Itemize
-Variablen werden kursiv gesetzt:
+Variables are set in italics:
  
 \begin_inset Formula $u$
 \end_inset
@@ -1956,9 +1871,10 @@ Variablen werden kursiv gesetzt:
 \end_layout
 
 \begin_layout Itemize
-Indizes,
- Konstanten,
- physikalische Einheiten und Funktionsnamen werden aufrecht gesetzt:
+Subscripts,
+ constants,
+ physical units,
+ and function names are set upright(roman):
  
 \begin_inset Formula $\mathrm{kA}$
 \end_inset
@@ -1967,7 +1883,7 @@ Indizes,
 \end_layout
 
 \begin_layout Itemize
-Zwischen Zahlenwert und Einheit wird ein kleiner Leerraum gesetzt:
+A small space is inserted between a numerical value and the unit:
  
 \begin_inset Formula $U=5\,\mathrm{V}$
 \end_inset
@@ -1976,7 +1892,7 @@ Zwischen Zahlenwert und Einheit wird ein kleiner Leerraum gesetzt:
 \end_layout
 
 \begin_layout Itemize
-Konstante indizes werden aufrecht gesetzt:
+Constant subscripts are set in italics:
  
 \begin_inset Formula $u_{\mathrm{min}}$
 \end_inset
@@ -1985,7 +1901,7 @@ Konstante indizes werden aufrecht gesetzt:
 \end_layout
 
 \begin_layout Itemize
-Variable Indizes werden kursiv gesetzt:
+Variable:
  
 \begin_inset Formula $\overline{u}=\frac{1}{42}\sum_{k=1}^{42}u_{k}$
 \end_inset
@@ -1994,7 +1910,7 @@ Variable Indizes werden kursiv gesetzt:
 \end_layout
 
 \begin_layout Itemize
-Zur Multiplikation wird der Multiplikationspunkt gesetzt:
+A multiplication dot is used for multiplication:
  
 \begin_inset Formula $x\cdot y=z$
 \end_inset
@@ -2003,28 +1919,29 @@ Zur Multiplikation wird der Multiplikationspunkt gesetzt:
 \end_layout
 
 \begin_layout Itemize
-Für das Kreuzprodukt wird das liegende Kreuz verwendet:
+A cross is used for the cross product:
  
 \begin_inset Formula $\boldsymbol{x}\times\boldsymbol{y}=\boldsymbol{z}$
 \end_inset
 
 .
- Weiterhin darf es für Flächenangaben verwendet werden:
+ Furthermore,
+ it may be used to specify areas:
  
 \begin_inset Formula $A=25\,\mathrm{m}\times14\,\mathrm{m}$
 \end_inset
 
 .
- Das liegende Kreuz 
+ The cross 
 \begin_inset Formula $\times$
 \end_inset
 
- ist nicht dasselbe Zeichen wie der vor-vorletzte Buchstabe des Alphabets:
+ is not the same character as the third-to-last letter of the alphabet:
  x.
 \end_layout
 
 \begin_layout Itemize
-Für die Faltung wird das Sternchen verwendet:
+An asterisk is used for convolution:
  
 \begin_inset Formula $a*b$
 \end_inset
@@ -2033,11 +1950,12 @@ Für die Faltung wird das Sternchen verwendet:
 \end_layout
 
 \begin_layout Itemize
-Bei Zwischenzeilen-Formeln kann statt 
+For inline equations,
+ 
 \begin_inset Formula $\mathrm{e}^{\mathrm{j}\,\varphi}$
 \end_inset
 
- geschrieben werden:
+ can be written instead of:
  
 \begin_inset Formula $\mathrm{exp}\left(\mathrm{j}\,\varphi\right)$
 \end_inset
@@ -2046,11 +1964,12 @@ Bei Zwischenzeilen-Formeln kann statt
 \end_layout
 
 \begin_layout Itemize
-Bei Zwischenzeilenformeln kann statt dem Bruch (
+For inline equations,
+ a slah can be used instead of a fraction (
 \begin_inset Formula $\frac{7}{8}$
 \end_inset
 
-) der Schrägstrich verwendet werden:
+) :
  
 \begin_inset Formula $7/8$
 \end_inset
@@ -2059,12 +1978,12 @@ Bei Zwischenzeilenformeln kann statt dem Bruch (
 \end_layout
 
 \begin_layout Standard
-Also:
+thus:
  
 \begin_inset Formula $x_{\mathrm{start}}$
 \end_inset
 
- statt 
+ instead of 
 \begin_inset Formula $x_{start}$
 \end_inset
 
@@ -2073,7 +1992,7 @@ Also:
 \begin_inset Formula $\mathrm{sin}(x)$
 \end_inset
 
- statt 
+ instead of 
 \begin_inset Formula $sin(x)$
 \end_inset
 
@@ -2082,7 +2001,7 @@ Also:
 \begin_inset Formula $z=4+\mathrm{j}\,6$
 \end_inset
 
- statt 
+ instead of 
 \begin_inset Formula $z=4+j\,6$
 \end_inset
 
@@ -2091,22 +2010,23 @@ Also:
 \begin_inset Formula $i=4{,}5\,\mathrm{A}$
 \end_inset
 
- statt 
+ instead of 
 \begin_inset Formula $i=4{,}5\,A$
 \end_inset
 
- und 
+ and 
 \begin_inset Formula $\mathrm{e}^{\mathrm{j}\,\pi}$
 \end_inset
 
- statt 
+ instead of 
 \begin_inset Formula $e^{j\,\pi}$
 \end_inset
 
 .
- Bei Zahlenwerten in Formeln sollte das Komma als Dezimaltrennzeichen in geschweifte Klammern gesetzt werden.
- Damit wird ein falscher Leerraum verhindert.
- Richtig:
+ For numerical values in equations,
+ the comma acting as a decimal separator should be enclosed in curly braces.
+ This prevents incorrect spacing.
+ Correct:
  
 \begin_inset ERT
 status open
@@ -2122,13 +2042,13 @@ pi=3{,}14$|
 
 \end_inset
 
- ergibt:
+ yields:
  
 \begin_inset Formula $\pi=3{,}14$
 \end_inset
 
 .
- Falsch:
+ incorect:
  
 \begin_inset ERT
 status open
@@ -2144,7 +2064,7 @@ pi=3,14$|
 
 \end_inset
 
- ergibt:
+ yields:
  
 \begin_inset ERT
 status open
@@ -2160,7 +2080,7 @@ raisebox{-1mm}{
 
  
 \begin_inset Graphics
-	filename figures/03kommaabstand/kommaabstand.png
+	filename figures/03commadistance/commadistance.png
 	width 19mm
 
 \end_inset
@@ -2180,11 +2100,17 @@ status open
 \end_layout
 
 \begin_layout Standard
+[Note:
+ Typically in English,
+ the decimal point is used instead of a comma,].
+\end_layout
+
+\begin_layout Standard
 In Formeln kommen beispielhaft folgende Elemente vor:
 \end_layout
 
 \begin_layout Itemize
-Wurzel:
+Square root:
  
 \begin_inset Formula $\sqrt{\left(x\right)}$
 \end_inset
@@ -2193,7 +2119,7 @@ Wurzel:
 \end_layout
 
 \begin_layout Itemize
-n-te Wurzel:
+n-th root:
  
 \begin_inset Formula $\sqrt[3]{x}$
 \end_inset
@@ -2202,16 +2128,16 @@ n-te Wurzel:
 \end_layout
 
 \begin_layout Itemize
-Bruch:
+Fraction:
  
-\begin_inset Formula $\frac{\text{Zähler}}{\text{Nenner}}$
+\begin_inset Formula $\frac{\text{Numerator}}{\text{Denominator}}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Itemize
-Index:
+Subscritp:
  
 \begin_inset Formula $x_{1}$
 \end_inset
@@ -2220,7 +2146,7 @@ Index:
 \end_layout
 
 \begin_layout Itemize
-Index mit mehreren Buchstaben:
+Subscript with multiple letters:
  
 \begin_inset Formula $x_{\mathrm{start}}$
 \end_inset
@@ -2229,7 +2155,7 @@ Index mit mehreren Buchstaben:
 \end_layout
 
 \begin_layout Itemize
-Sub-(sub-)Indizes:
+Sub-(sub-)subscripts:
  
 \begin_inset Formula $S_{v_{\mathrm{end}_{2}}}$
 \end_inset
@@ -2238,7 +2164,7 @@ Sub-(sub-)Indizes:
 \end_layout
 
 \begin_layout Itemize
-Exponent:
+Superscript:
  
 \begin_inset Formula $x^{2}$
 \end_inset
@@ -2247,7 +2173,7 @@ Exponent:
 \end_layout
 
 \begin_layout Itemize
-Exponent mit mehreren Buchstaben:
+Superscript with multiple letters:
  
 \begin_inset Formula $x^{12}$
 \end_inset
@@ -2265,7 +2191,7 @@ Integral:
 \end_layout
 
 \begin_layout Itemize
-Bestimmtes Integral:
+Definite Integral:
  
 \begin_inset Formula $\int_{0}^{\infty}f(x)\,\mathrm{d}x$
 \end_inset
@@ -2274,7 +2200,7 @@ Bestimmtes Integral:
 \end_layout
 
 \begin_layout Itemize
-Buchstaben aufrecht gesetzt (nicht kursiv):
+Upright (roman) letters (not italic):
  
 \begin_inset Formula $\mathrm{x}$
 \end_inset
@@ -2283,7 +2209,7 @@ Buchstaben aufrecht gesetzt (nicht kursiv):
 \end_layout
 
 \begin_layout Itemize
-Summenzeichen:
+Summation sign:
  
 \begin_inset Formula $\sum$
 \end_inset
@@ -2292,7 +2218,7 @@ Summenzeichen:
 \end_layout
 
 \begin_layout Itemize
-Summenzeichen mit Grenzen:
+Summation sign with limits:
  
 \begin_inset Formula $\sum_{k=1}^{42}$
 \end_inset
@@ -2301,7 +2227,7 @@ Summenzeichen mit Grenzen:
 \end_layout
 
 \begin_layout Itemize
-Griechische Buchstaben:
+Greek letters:
  
 \begin_inset Formula $\alpha$
 \end_inset
@@ -2338,7 +2264,7 @@ Griechische Buchstaben:
 \end_layout
 
 \begin_layout Itemize
-Multiplikationspunkt (nicht:
+Multiplication dot (not:
  $a*b$):
  
 \begin_inset Formula $a\cdot b$
@@ -2348,7 +2274,7 @@ Multiplikationspunkt (nicht:
 \end_layout
 
 \begin_layout Itemize
-Geschweifte Klammern unten:
+Curly braces below:
  
 \begin_inset Formula $\underbrace{a\cdot b}_{c}$
 \end_inset
@@ -2357,7 +2283,7 @@ Geschweifte Klammern unten:
 \end_layout
 
 \begin_layout Itemize
-Geschweifte Klammern oben:
+Curly braces above:
  
 \begin_inset Formula $\overbrace{0\cdot b}^{=0}$
 \end_inset
@@ -2366,8 +2292,9 @@ Geschweifte Klammern oben:
 \end_layout
 
 \begin_layout Itemize
-Abstand:
- klein (Multiplikation) 
+Spacing:
+ small (multiplication):
+ 
 \begin_inset Formula $a\,b$
 \end_inset
 
@@ -2375,8 +2302,8 @@ Abstand:
 \end_layout
 
 \begin_layout Itemize
-Abstand:
- mittel 
+Spacing:
+ medium 
 \begin_inset Formula $a\ b$
 \end_inset
 
@@ -2384,8 +2311,8 @@ Abstand:
 \end_layout
 
 \begin_layout Itemize
-Abstand:
- groß 
+Spacing:
+ large 
 \begin_inset Formula $a\quad b$
 \end_inset
 
@@ -2393,7 +2320,7 @@ Abstand:
 \end_layout
 
 \begin_layout Itemize
-Doppelter großer Abstand:
+Double large spacing:
  
 \begin_inset Formula $a\qquad b$
 \end_inset
@@ -2402,8 +2329,7 @@ Doppelter großer Abstand:
 \end_layout
 
 \begin_layout Itemize
-Man achte darauf,
- dass nach dem Mathebefehl ein Leerzeichen steht:
+Make sure there is a space after the math command:
  
 \begin_inset Formula $\alpha a$
 \end_inset
@@ -2411,12 +2337,11 @@ Man achte darauf,
  % Hinweis:
  $
 \backslash
-alphaa$ funktioniert nicht
+alphaa$ does not work
 \end_layout
 
 \begin_layout Itemize
-Klammern,
- deren Größe sich dem Inhalt anpassen:
+Brackets that adjust their size to the content:
  
 \begin_inset Formula $\left[\sqrt{x^{2}}\right]$
 \end_inset
@@ -2434,7 +2359,7 @@ Klammern,
 \begin_inset Formula $\left|\sqrt{x^{2}}\right|$
 \end_inset
 
- statt 
+ instead of 
 \begin_inset Formula $[\sqrt{x^{2}}]$
 \end_inset
 
@@ -2452,7 +2377,7 @@ Klammern,
 \end_layout
 
 \begin_layout Itemize
-Klammern und senkrechte Striche in unterschiedlicher Größe:
+Brackets and vertical bars in different sizes:
  
 \begin_inset Formula $\bigr)$
 \end_inset
@@ -2528,12 +2453,12 @@ Matrix:
 \end_layout
 
 \begin_layout Itemize
-Limes:
+Limit:
  
 \begin_inset Formula $\lim_{x\rightarrow\infty}$
 \end_inset
 
- oder 
+ or 
 \begin_inset Formula ${\displaystyle \lim_{x\rightarrow\infty}}$
 \end_inset
 
@@ -2541,7 +2466,7 @@ Limes:
 \end_layout
 
 \begin_layout Itemize
-Geschweifte Klammer unterhalb:
+Curly brace underneath:
  
 \begin_inset Formula $\underbrace{1+2+3}_{=6}+4$
 \end_inset
@@ -2550,7 +2475,7 @@ Geschweifte Klammer unterhalb:
 \end_layout
 
 \begin_layout Itemize
-Geschweifte Klammer oberhalb:
+Curly brace above:
  
 \begin_inset Formula $1+\overbrace{2+3+4}^{=9}$
 \end_inset
@@ -2559,7 +2484,7 @@ Geschweifte Klammer oberhalb:
 \end_layout
 
 \begin_layout Itemize
-Strich unterhalb:
+Bar underneath:
  
 \begin_inset Formula $\underline{z}$
 \end_inset
@@ -2568,7 +2493,7 @@ Strich unterhalb:
 \end_layout
 
 \begin_layout Itemize
-Teile von Formeln können auch in unterschiedlichen Farbgebungen gesetzt werden:
+Parts of equations can also be set in different colors:
 \begin_inset Newline newline
 \end_inset
 
@@ -2580,7 +2505,7 @@ Teile von Formeln können auch in unterschiedlichen Farbgebungen gesetzt werden:
 \end_layout
 
 \begin_layout Itemize
-Sonderzeichen:
+Special characters:
  
 \begin_inset Formula $\smiley$
 \end_inset
@@ -2589,7 +2514,8 @@ Sonderzeichen:
 \end_layout
 
 \begin_layout Standard
-Je nach Umgebung (in-Zeile-Formel oder abgesetzte Formel) werden einige Elemente in unterschiedlicher Größe dargestellt:
+Depending on the environment (inline equation or displayed equation),
+ some elements are displayed in different sizes:
 \begin_inset Formula $\int_{0}^{\infty}\mathrm{sin}(x)\,\mathrm{d}x$
 \end_inset
 
@@ -2601,7 +2527,7 @@ Je nach Umgebung (in-Zeile-Formel oder abgesetzte Formel) werden einige Elemente
 
 \end_inset
 
-In-Zeile-Formeln können in der Größe von abgesetzten Formeln gesetzt werden:
+Inline equations can be set to the size of displayed equations:
  
 \begin_inset Formula ${\displaystyle {\displaystyle \int_{0}^{\infty}\mathrm{sin}(x)\,\mathrm{d}x}}$
 \end_inset
@@ -2610,8 +2536,8 @@ In-Zeile-Formeln können in der Größe von abgesetzten Formeln gesetzt werden:
 \end_layout
 
 \begin_layout Standard
-Latex kennt eine Vielzahl an Sonderzeichen:
- Erkennung von Sonderzeichen:
+LaTeX has a large number of special characters.
+ Recognizing special characters:
  
 \begin_inset Flex URL
 status open
@@ -2623,7 +2549,7 @@ http://detexify.kirelabs.org/classify.html
 
 \end_inset
 
- Übersicht der Sonderzeichen:
+ Overview of special characters:
  
 \begin_inset Flex URL
 status open
@@ -2639,7 +2565,7 @@ http://mirrors.ctan.org/info/symbols/comprehensive/symbols-a4.pdf
 \end_layout
 
 \begin_layout Standard
-Die nachfolgende Formel ist sehr lang und wird umgebrochen:
+The following equation is very long and will be broken across lines:
 \end_layout
 
 \begin_layout Standard
@@ -2655,7 +2581,7 @@ b_{k}=\frac{2}{T}\,\Biggl(\underbrace{\int_{-\frac{T}{2}}^{-\frac{T}{4}}-f_{3}\l
 \end_layout
 
 \begin_layout Standard
-Mit der align-Umgebung kann man sehr gut Formeln untereinander setzen:
+The align environment is very useful for stacking equations vertically:
 \end_layout
 
 \begin_layout Standard
@@ -2673,14 +2599,13 @@ b_{k} & =\frac{2}{T}\,\left(\int_{-\frac{T}{2}}^{0}f\left(t\right)\,\mathrm{sin}
 \end_layout
 
 \begin_layout Section
-Abbildungen als Gleitobjekte
+Figures as floating objects
 \end_layout
 
 \begin_layout Standard
-Gleitobjekte sind nicht fest im Text verankert,
- sondern werden durch LaTeX so verschoben,
- dass der Text und die Abbildung im Idealfall die Seite vollständig ausfüllen.
- Auf Abbildungen wird mit 
+Floating objects are not fixed at a specific location in the text but are shifted by LaTeX so that the text and the figure ideally fill the page completely.
+ Figures are referenced like this:
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:plots"
@@ -2688,7 +2613,7 @@ nolink "false"
 
 \end_inset
 
- verwiesen.
+
 \end_layout
 
 \begin_layout Standard
@@ -2733,8 +2658,7 @@ null
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Dies ist eine Abbildung mit einer Abbildungsunterschrift,
- die die Abbildung beschreibt.
+This is a figure with a caption that describes the figure.
 \end_layout
 
 \end_inset
@@ -2755,19 +2679,22 @@ name "fig:plots"
 \end_layout
 
 \begin_layout Chapter
-Tabellen
+Tables
 \end_layout
 
 \begin_layout Standard
-Die Tabelle 
+Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:komma"
+reference "tab:comma"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
 
 \end_inset
 
- zeigt exemplarisch den Aufbau einer Tabelle.
+ shows an exemplary structure of a table.
 \end_layout
 
 \begin_layout Standard
@@ -2794,7 +2721,7 @@ Station
 \begin_layout Plain Layout
 
 \series bold
-Messwert
+Measured value
 \begin_inset space ~
 \end_inset
 
@@ -2988,10 +2915,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Messwertabelle verschiedener Unterstationen 
+Table of measured value \SpecialChar allowbreak
+from various substations 
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:komma"
+name "tab:comma"
 
 \end_inset
 
@@ -3023,54 +2951,55 @@ name "tab:komma"
 \end_layout
 
 \begin_layout Standard
-Bei Tabellen sind insbesondere folgende Punkte wichtig:
+For tables,
+ the following points are particularly important:
 \end_layout
 
 \begin_layout Itemize
-Zusammengehörige Zahlenwerte sind untereinander angeordnet,
- auch wenn eine Anordnung nebeneinander Platzsparender ist.
- Untereinander angeordnete Zahlenwerte sind leichter zu vergleichen.
+Related numerical values are aligned vertically under one another,
+ even if placing them side by side saves space.
+ Vertically aligned numbers are easier to compare.
 \end_layout
 
 \begin_layout Itemize
-Zahlenwerte sind untereinander am Komma ausgerichtet.
- Wenn die Zahl kein Komma enthält,
- wird sie dort ausgerichtet,
- wo das Komma stehen würde (Nach der letzten Ziffer).
+Numerical values are aligned vertically at the decimal point.
+ If the number does not contain a decimal point,
+ it is aligned where the decimal point would be (after the last digit).
 \end_layout
 
 \begin_layout Itemize
-Die Einheit steht entweder in der Spaltenüberschrift oder hinter jedem Zahlenwert.
+The unit is placed either in the column header or after each numerical value.
 \end_layout
 
 \begin_layout Itemize
-Die Tabellenüberschrift steht über der Tabelle,
- nicht unterhalb
+The table title (caption) is placed above the table,
+ not below.
 \end_layout
 
 \begin_layout Itemize
-Tabellen werden im Text erklärt.
+Tables are explained in the text.
 \end_layout
 
 \begin_layout Itemize
-Sehr große Tabellen mit Messwerten oder gerechneten Werten werden häufig besser als Grafik dargestellt.
+Very large tables containing measured or calculated values are often better presented as graphs.
 \end_layout
 
 \begin_layout Chapter
-Anhänge
+Appendices
 \end_layout
 
 \begin_layout Standard
-Für Anhänge gilt,
- dass das Dokument auch verständlich sein,
- soll,
- wenn Anhänge fehlen würden.
- Lange Tabellen mit Messdaten können beispielsweise in den Anhang aufgenommen werden,
- oder umfangreiche Konstruktionszeichnungen.
- Als Beispiel sind hier in Anhang 
+For appendices,
+ the document should remain understandable even if the appendices were missing.
+ Long tables with measurement data,
+ for example,
+ can be included in the appendix,
+ as well as extensive construction drawings.
+ As an example,
+ see Appendix.
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:Wichtige-Abbildung"
+reference "chap:keyfigure"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3078,10 +3007,10 @@ nolink "false"
 
 \end_inset
 
- und Anhang 
+ and Appendix 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:Wichtige-Tabelle"
+reference "chap:keytable"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3089,55 +3018,55 @@ nolink "false"
 
 \end_inset
 
- Anhänge beigefügt.
+ are attached.
 \end_layout
 
 \begin_layout Chapter
-Aufzählungen und Nummerierungen
+List and Numbering
 \end_layout
 
 \begin_layout Standard
-Insbesondere in den Naturwissenschaften ist es häufig sinnvoll statt einem langen Fließtext eine Aufzählung oder eine Nummerierung zu verwenden.
- Aufzählungen dienen:
+Especially in the natural sciences,
+ it is often useful to use a list or numbering instead of a long continuous text.
+ Lists serve:
 \end_layout
 
 \begin_layout Itemize
-der Übersichtlichkeit
+to improve clarity
 \end_layout
 
 \begin_layout Itemize
-der Strukturierung
+to provide structure
 \end_layout
 
 \begin_layout Itemize
-zur Nennung verschiedener Punkte,
- wenn keine Reihenfolge festgelegt werden kann.
+to mention various points when no specific order can be determined.
 \end_layout
 
 \begin_layout Standard
-Eine Nummerierung wird verwendet,
- wenn eine Reihenfolge genannt werden kann.
- Als Beispiel seien hier die fünf Sicherheitsregeln der Elektrotechnik genannt:
+Numbering is used when a specific order can be defined.
+ As an example,
+ the five safety rules of electrical engineering are listed below:
 \end_layout
 
 \begin_layout Enumerate
-Freischalten
+Disconnect completely
 \end_layout
 
 \begin_layout Enumerate
-Gegen Wiedereinschalten sichern
+Secure against reconnection
 \end_layout
 
 \begin_layout Enumerate
-Spannungsfreiheit feststellen
+verify the absense of voltage
 \end_layout
 
 \begin_layout Enumerate
-Erden und Kurzschließen
+Ground and short-circuit
 \end_layout
 
 \begin_layout Enumerate
-Benachbarte unter Spannung stehende Teile abdecken oder abschranken.
+Cover or isolate adjacent live parts.
 \end_layout
 
 \begin_layout Chapter
@@ -3145,21 +3074,23 @@ Hyperlinks
 \end_layout
 
 \begin_layout Standard
-Hyperlinks können mit einem Rahmen umfasst werden,
- der am Display angezeigt,
- aber nicht ausgedruckt wird.
- Dies zeigt die Abbildung 
+Hyperlinks can be surrounded by a frame that is displayed on the screen but not printed.
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:linkmitrahmen"
+reference "fig:framedlink"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
 
 \end_inset
 
 .
- Dies ist der Standardfall.
- Nicht alle PDF-Betrachtungsprogramme heben hyperlinks optisch hervor.
- Das Programm SumatraPDF tut dies beispielsweise nicht.
+ This is the default setting.
+ Not all PDF viewers visually highlight hyperlinks.
+ the program SumatraPDF,
+ for example does not do this.
 \end_layout
 
 \begin_layout Standard
@@ -3176,7 +3107,7 @@ status open
 
 
 \begin_inset Graphics
-	filename figures/05_rahmenumlinks/mitrahmen.png
+	filename figures/05_framedlinks/framedlink.png
 	width 5cm
 
 \end_inset
@@ -3205,7 +3136,7 @@ null
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hyperlink mit optischer Hervorhebung mit einem blauen Rahmen
+Hyperlink with visual highlighting using a blue frame
 \end_layout
 
 \end_inset
@@ -3213,7 +3144,7 @@ Hyperlink mit optischer Hervorhebung mit einem blauen Rahmen
 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:linkmitrahmen"
+name "fig:framedlink"
 
 \end_inset
 
@@ -3226,7 +3157,7 @@ name "fig:linkmitrahmen"
 \end_layout
 
 \begin_layout Standard
-Dies kann unterbunden werden mit folgenden Optionen des Paketes hyperref:
+This can be prevented with the following options of the hyperref package:
 \end_layout
 
 \begin_layout Standard
@@ -3247,15 +3178,15 @@ usepackage[colorlinks=false,pdfborder={0 0 0}]  {hyperref}
 \end_layout
 
 \begin_layout Standard
-Die Abbildung 
+Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:linkohnerahmen"
+reference "fig:linkwithoutframe"
 nolink "false"
 
 \end_inset
 
- zeigt das Ergebnis.
+ show the result.
 \end_layout
 
 \begin_layout Standard
@@ -3272,7 +3203,7 @@ status open
 
 
 \begin_inset Graphics
-	filename figures/05_rahmenumlinks/ohnerahmen.png
+	filename figures/05_framedlinks/linkwithoutframe.png
 	width 5cm
 
 \end_inset
@@ -3301,7 +3232,7 @@ null
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hyperlink ohe optischer Hervorhebung mit einem blauen Rahmen
+Hyperlink without visual highlighting using a blue frame
 \end_layout
 
 \end_inset
@@ -3309,7 +3240,7 @@ Hyperlink ohe optischer Hervorhebung mit einem blauen Rahmen
 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:linkohnerahmen"
+name "fig:linkwithoutframe"
 
 \end_inset
 
@@ -3322,20 +3253,19 @@ name "fig:linkohnerahmen"
 \end_layout
 
 \begin_layout Chapter
-Quellcode
+Source Code
 \end_layout
 
 \begin_layout Standard
-In LaTeX gibt es das Paket Listings,
- mit dem recht komfortabel Quellcode in das Dokument aufgenommen werden kann.
- Hier ist ein Beispiel:
- 
+LaTeX has the Listings package,
+ which can be used to easily include source code in the document.
+ Here is an example:
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "figures/02programmlisting/SplitPDFInSinglePages.ps"
+filename "figures/02programlisting/SplitPDFInSinglePages.ps"
 lstparams "caption={{Kurzer Batch-Code}},label={kurzerbatchcode}"
 literal "true"
 
@@ -3345,7 +3275,8 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-Im folgenden Beispiel ist der Code farblich gekennzeichnet.
+In the example below,
+ the code is color coded.
 \end_layout
 
 \begin_layout Standard
@@ -3361,9 +3292,8 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-Hier ist ein weiteres Beispiel,
- welches einen Seitenumbruch,
- Listing-Unterschrift und einen Querverweis (Es handelt sich um das Listing 
+Here is another example that includes a page break,
+ listing signature and a cross-reference (It is the listing 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "lstsehrlangeslisting"
@@ -3374,13 +3304,13 @@ nolink "false"
 
 \end_inset
 
-) auf das Listing enthält:
+) on the listing contains:
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
-filename "figures/02programmlisting/SehrLangerQuellCode.txt"
+filename "figures/02programlisting/SourceCode.txt"
 lstparams "captionpos=b,label=lstsehrlangeslisting,caption={Unterschrift des sehr langen Quellcodes}"
 literal "true"
 
@@ -3390,7 +3320,8 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-Hier ist ein Listing in einer Zeile 
+Here is a one line listing:
+ 
 \begin_inset ERT
 status open
 
@@ -3408,7 +3339,7 @@ lstinline[language=C]|for(int i = 0,
 \end_layout
 
 \begin_layout Standard
-Das ist ein inline-Code ohne Farben:
+This is an inline code without colors:
  
 \begin_inset ERT
 status open
@@ -3427,38 +3358,35 @@ lstinline[]|for(int i = 0,
 \end_layout
 
 \begin_layout Chapter
-Zusammenfassung
+Summary
 \end_layout
 
 \begin_layout Standard
-Hier wird beschrieben,
- welche Erkenntnisse sich aus der Arbeit ergeben.
- Weiterhin kann hier auch angegeben werden,
- welche Themen weiter untersucht werden können oder sollten.
+The findings resulting from the work are described here.
+ It can also be stated here which topics can or should be further investigated.
 \end_layout
 
 \begin_layout Chapter
-Hinweise zum Literaturverzeichnis mit Biblatex
+Notes on the bibliography with Biblatex
 \end_layout
 
 \begin_layout Standard
-Mit LaTeX/LyX kann ein Literaturverzeichnis mit oder ohne das System Biblatex verwendet werden.
- Die Literaturquellen aus der Datenbank werden in das Literaturverzeichnis des PDF-Dokumentes übernommen,
- wenn durch Verweise auf die Quellen verwiesen wird.
- 
+With LaTeX/LyX,
+ a bibliography can be created with or without the Biblatex system.
+ The literary sources from the database are included in the bibliography of the PDF document if references to these sources are made in the text.
 \end_layout
 
 \begin_layout Standard
-Hier wird exemplarisch auf Literaturverweise eingegangen.
- Ein guter Start in das Thema 
-\begin_inset Quotes gld
-\end_inset
-
-Wissenschaftliches Schreiben
+References are discussed here as an example.
+ A good start to the topic of 
 \begin_inset Quotes grd
 \end_inset
 
- ist in 
+academic writing
+\begin_inset Quotes grd
+\end_inset
+
+ is provided in 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "kuehtz2011biblatex"
@@ -3466,10 +3394,11 @@ literal "false"
 
 \end_inset
 
- gegeben.
- Beim Zitieren von Internetquellen ist wichtig,
- permanente Links zu verwenden.
- Beispielsweise wird in 
+.
+ When citing internet sources,
+ it is important to use permanent links.
+ For example,
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Wikipediaelektrotechnikbiblatex"
@@ -3477,8 +3406,8 @@ literal "false"
 
 \end_inset
 
- auf den Wikipedia-Artikel zur Elektrotechnik verwiesen.
- Hier ist ein Zitat des Handbuches über das SI-System 
+ refers to the Wikipedia article on electrical engineering.
+ Here is a citation of the SI System brochure 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "sisystem"
@@ -3487,14 +3416,13 @@ literal "false"
 \end_inset
 
 ,
- einer Literatur,
- die im Internet zugänglich ist.
+ a literature source that is accessible online.
 \end_layout
 
 \begin_layout Standard
-Wenn Sie Biblatex verwenden,
- legen Sie eine Textdatei mit der Dateiendung .bib an.
- Der nachfolgende Quellcode zeigt beispielhaft den Inhalt einer bib-Datei:
+If you are using Biblatex,
+ create a text file with the .bib extension.
+ The following source code shows an example of the contents of a bib file:
 \end_layout
 
 \begin_layout Standard
@@ -3592,23 +3520,24 @@ pubstate = {}
 \end_layout
 
 \begin_layout Standard
-Üblicherweise werden folgende Datenfelder gefüllt:
+Typically,
+ the following data fields are populated:
  author,
  title,
- date (das ist dann das Datum des letzten Aufrufes),
+ date (this is the date of the last access),
  url,
- version (das ist dann die Versionsnummer und das Veröffentlichungsjahr).
- Folgende Felder sind optional:
+ and version (this is the version number and the year of publication).
+ The following fields are optional:
  doi,
  organization,
  note,
- notiz (dort können interne Notizen über die Quelle angegeben werden,
- die nicht im Literaturverzeichnis erscheinen),
+ notiz (internal notes about the source can be entered here,
+ which will not appear in the bibliography),
  subtitle,
  titleaddon,
  language,
  addendum,
- pupstate
+ pubstate.
 \end_layout
 
 \begin_layout Standard
@@ -3625,13 +3554,13 @@ encoding "default"
 
 \begin_layout Chapter
 \start_of_appendix
-Wichtige Abbildung
+Important Figure
 \end_layout
 
-\begin_layout Standard
+\begin_layout Chapter
 \begin_inset CommandInset label
 LatexCommand label
-name "chap:Wichtige-Abbildung"
+name "chap:keyfigure"
 
 \end_inset
 
@@ -3646,13 +3575,13 @@ name "chap:Wichtige-Abbildung"
 \end_layout
 
 \begin_layout Chapter
-Wichtige Tabelle
+Important Tables
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "chap:Wichtige-Tabelle"
+name "chap:keytable"
 
 \end_inset
 
@@ -3680,7 +3609,7 @@ Station
 \begin_layout Plain Layout
 
 \series bold
-Messwert
+Measured Value
 \begin_inset space ~
 \end_inset
 
@@ -3874,10 +3803,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tabelle im Anhang 
+Table in the appendix 
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:wichtigetabelle"
+name "tab:keytable"
 
 \end_inset
 
