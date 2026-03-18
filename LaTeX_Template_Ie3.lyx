@@ -135,7 +135,7 @@
 \begin{tikzpicture}[remember picture,overlay]
 
 \node at ([shift={(159.5mm,-22.95mm)}]current page.north west) 
-{\includegraphics[width=76.76mm]{figures/Vorlagenbilder/UniversityLogo.pdf}};
+{\includegraphics[width=76.76mm]{figures/UniversityLogo.pdf}};
 
 \draw[color=black, line width=0.35mm] (-9.0mm,-23.45mm) -- ++(177.9mm,0mm);
 
