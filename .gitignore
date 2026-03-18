@@ -32,7 +32,6 @@ lyx_tmpbuf*/
 *.idx
 *.ind
 *.ilg
-*.pdf
 
 #System
 .DS_Store
