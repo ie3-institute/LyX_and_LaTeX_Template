@@ -135,7 +135,9 @@
 \begin{tikzpicture}[remember picture,overlay]
 
 \node at ([shift={(159.5mm,-22.95mm)}]current page.north west) 
-{\includegraphics[width=76.76mm]{figures/UniversityLogo.pdf}};
+{\includegraphics[  width=76.76mm,
+  trim=2cm 15cm 2cm 0.5cm,
+  clip]{figures/UniversityLogo.pdf}};
 
 \draw[color=black, line width=0.35mm] (-9.0mm,-23.45mm) -- ++(177.9mm,0mm);
 
@@ -724,7 +726,7 @@ normalfont{
 
 \end_inset
 
-DMS
+SG
 \begin_inset ERT
 status open
 
@@ -735,7 +737,7 @@ status open
 
 \end_inset
 
-Dehnungsmessstreifen
+Strain Gauge
 \begin_inset ERT
 status open
 
@@ -1205,7 +1207,7 @@ status open
 
 \end_inset
 
-Dämpfung des geschlossenen Stromregelkreises
+Damping of the closed current control loop
 \begin_inset ERT
 status open
 
@@ -1243,7 +1245,7 @@ status open
 
 \end_inset
 
-Induzierte Ankerspannung der Gleichstrommaschine
+Induced armature voltage of the DC machine
 \begin_inset ERT
 status open
 
@@ -1298,7 +1300,7 @@ status open
 
 \end_inset
 
-Bezugseffektivwert einer Spannung
+Reference RMS value of a voltage
 \begin_inset ERT
 status open
 
@@ -1340,7 +1342,7 @@ status open
 
 \end_inset
 
-Normierte Statorspannung der d-Achse
+Normalized stator voltage of the d-axis
 \begin_inset ERT
 status open
 
@@ -1382,7 +1384,7 @@ status open
 
 \end_inset
 
-Normierte Feldspannung (Erregersystem)
+Normalized field voltage (excitation system)
 \begin_inset ERT
 status open
 
@@ -1424,7 +1426,7 @@ status open
 
 \end_inset
 
-Bezugsfeldspannung der d-Achse
+Reference field voltage of the d-axis
 \begin_inset ERT
 status open
 
@@ -1466,7 +1468,7 @@ status open
 
 \end_inset
 
-Maximum der normierten Feldspannung (Erregersystem)
+Maximum of the normalized field voltage (excitation system)
 \begin_inset ERT
 status open
 
@@ -1627,8 +1629,8 @@ After each structural element (chapter,
 \end_layout
 
 \begin_layout Subsection
-Gliederung:
- Unter-Abschnitt
+Structure:
+ Subsection
 \end_layout
 
 \begin_layout Standard
@@ -1678,7 +1680,7 @@ in this example,
 \end_inset
 
 In addition,
- you can have an equation numbered automaticaly
+ you can have an equation numbered automatically
 \begin_inset Formula 
 \begin{equation}
 \mathrm{sin}(x)=\pi/3\label{eq:abgesetzteformel}
@@ -1689,7 +1691,7 @@ In addition,
 The text can then refer to Equation 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "eq:displayed"
+reference "fig:plots"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1965,7 +1967,7 @@ For inline equations,
 
 \begin_layout Itemize
 For inline equations,
- a slah can be used instead of a fraction (
+ a slash can be used instead of a fraction (
 \begin_inset Formula $\frac{7}{8}$
 \end_inset
 
@@ -2048,7 +2050,7 @@ pi=3{,}14$|
 \end_inset
 
 .
- incorect:
+ incorrect:
  
 \begin_inset ERT
 status open
@@ -2106,7 +2108,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-In Formeln kommen beispielhaft folgende Elemente vor:
+The following elements occur as examples in formulas:
 \end_layout
 
 \begin_layout Itemize
@@ -2334,7 +2336,7 @@ Make sure there is a space after the math command:
 \begin_inset Formula $\alpha a$
 \end_inset
 
- % Hinweis:
+ % Note:
  $
 \backslash
 alphaa$ does not work
@@ -3058,7 +3060,7 @@ Secure against reconnection
 \end_layout
 
 \begin_layout Enumerate
-verify the absense of voltage
+verify the absence of voltage
 \end_layout
 
 \begin_layout Enumerate
@@ -3531,10 +3533,10 @@ Typically,
  doi,
  organization,
  note,
- notiz (internal notes about the source can be entered here,
+ note (internal notes about the source can be entered here,
  which will not appear in the bibliography),
  subtitle,
- titleaddon,
+ title addon,
  language,
  addendum,
  pubstate.
@@ -3557,7 +3559,7 @@ encoding "default"
 Important Figure
 \end_layout
 
-\begin_layout Chapter
+\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:keyfigure"
