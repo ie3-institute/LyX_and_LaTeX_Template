@@ -8,3 +8,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Added License, Authors file, etc. [#1](https://github.com/ie3-institute/LyX_and_LaTeX_Template/issues/1)
+- Added ie3-institute requirements [#2](https://github.com/ie3-institute/LyX_and_LaTeX_Template/issues/2)
