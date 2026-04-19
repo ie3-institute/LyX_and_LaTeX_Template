@@ -309,8 +309,7 @@ LaTeX
 \end_layout
 
 \begin_layout Subtitle
-Thesis submitted in partial fulfillment of the requirements for the degree of Bachelor,
- Master and PHD
+Thesis submitted in partial fulfillment of the requirements for the degree of Bachelor and Master
 \end_layout
 
 \begin_layout Date
@@ -329,7 +328,7 @@ Maria Musterfrau (458697)
 \begin_inset Newline newline
 \end_inset
 
-Last tested with LyX 2.4.4 and MikTeX 25.12 on 2026-25-02
+Last tested with LyX 2.4.4 and MikTeX 25.12 on 2026-02-25
 \end_layout
 
 \begin_layout Standard
@@ -567,12 +566,12 @@ This template contains many directories.
 \end_layout
 
 \begin_layout Subsection*
-Notes on Cooperations (Only if absolutely necessary)
+Notes on Cooperation (Only if absolutely necessary)
 \end_layout
 
 \begin_layout Standard
 If necessary,
- any cooperations with partners can be mentioned here.
+ any cooperation with partners can be mentioned here.
  Furthermore,
  there is space for acknowledgments and dedications.
 \end_layout
@@ -3268,7 +3267,7 @@ LaTeX has the Listings package,
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "figures/02programlisting/SplitPDFInSinglePages.ps"
-lstparams "caption={{Kurzer Batch-Code}},label={kurzerbatchcode}"
+lstparams "caption={{Batch-Code}},label={batchcode}"
 literal "true"
 
 \end_inset
@@ -3285,7 +3284,7 @@ In the example below,
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "figures/04MatlabCode/matlabcode.m"
-lstparams "language=Matlab,caption={Testunterschrift},label={foo}"
+lstparams "language=Matlab,caption={Testsignature},label={foo}"
 literal "true"
 
 \end_inset
@@ -3313,7 +3312,7 @@ nolink "false"
 \begin_inset CommandInset include
 LatexCommand lstinputlisting
 filename "figures/02programlisting/SourceCode.txt"
-lstparams "captionpos=b,label=lstsehrlangeslisting,caption={Unterschrift des sehr langen Quellcodes}"
+lstparams "captionpos=b,label=lstsehrlangeslisting,caption={Signature Quellcode}"
 literal "true"
 
 \end_inset
